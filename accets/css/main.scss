@@ -1,0 +1,5 @@
+// Переопределения переменных ДО импорта Bootstrap
+@import "variables.scss";
+
+// Подключаем весь Bootstrap
+@import "./bootstrap/bootstrap.scss";
