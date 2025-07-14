@@ -1,3 +1,13 @@
 $primary: #16653F; // твой цвет
 
 $body-bg: #E6ECE5;
+
+a {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #596059;
+}
+
+.alert {
+  max-width: max-content;
+}

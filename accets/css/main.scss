@@ -3,3 +3,306 @@
 
 // Подключаем весь Bootstrap
 @import "./bootstrap/bootstrap.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+$borderRadius: 30px;
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #596059;
+}
+
+
+.btn_srm {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(180deg, #2b7 0%, #cfdd80 100%);
+  border-radius: 21px;
+  border: 3px solid $body-bg;
+  padding: 0.2rem 1rem;
+  transition: ease-in-out all .3s;
+
+  &:hover {
+    transition: ease-in-out all .3s;
+    border: 3px solid $white;
+  }
+
+  img {
+    margin-right: 14px;
+  }
+}
+
+
+.item_container {
+  max-width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  height: 100vh;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.sidebar {
+  padding: 1rem;
+  padding-left: 1.2rem;
+  max-width: 329px;
+  flex-shrink: 0;
+  background-color: $white;
+  border-radius: $borderRadius;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+  //LOGO
+  .logo_box {
+    max-width: 100%;
+    height: 56px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2.5rem;
+
+    .logo_img {
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .btn_menu {
+    position: absolute;
+    border: 0;
+    background-color: $white;
+    left: 96%;
+    top: 15%;
+    height: 4.5rem;
+    border-radius: 0px 35px 35px 0;
+
+    // &:hover {
+    //   transform: scale(1.1);
+    // }
+
+    // img {
+    //   width: 1.6rem; // масштаб иконки внутри
+    //   height: 1.6rem;
+    // }
+
+    .icon-container {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .dots-icon,
+    .arrow-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .arrow-icon {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+
+    .icon-container:hover .dots-icon {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+
+    .icon-container:hover .arrow-icon {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .menu {
+    flex: 1;
+    margin-bottom: 0.5rem;
+    position: relative;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #46c47a #46c47a00;
+
+    // WebKit (Chrome, Safari)
+    &::-webkit-scrollbar {
+      width: 1px;
+      transition: opacity 0.3s;
+      opacity: 0; // скрыт по умолчанию
+    }
+
+    &:hover::-webkit-scrollbar {
+      opacity: 1; // появляется при наведении
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+    }
+
+
+    ul {
+      padding: 0;
+      display: grid;
+      gap: .3rem;
+
+      .active {
+        transition: ease-in-out all 0.3s;
+        background: linear-gradient(178deg, #2b7 0%, #dae888 100%);
+        color: $white;
+
+        img {
+          filter: brightness(0) invert(1) sepia(1) hue-rotate(180deg);
+        }
+      }
+
+      li {
+        a {
+          padding: .5rem;
+          border-radius: $borderRadius;
+          transition: ease-in-out all 0.3s;
+          display: grid;
+          gap: .5rem;
+          grid-template-columns: 24px 1fr;
+
+          text-decoration: none;
+          font-weight: 400;
+          font-size: 18px;
+          letter-spacing: 0.02em;
+          color: #596059;
+          transition: ease-in-out all 0.3s;
+
+          &:hover {
+            background: linear-gradient(178deg, #2b7 0%, #dae888 100%);
+            transition: ease-in-out all 0.3s;
+            color: $white;
+
+            img {
+              transition: ease-in-out all 0.3s;
+              filter: brightness(0) invert(1) sepia(1) hue-rotate(180deg);
+            }
+          }
+        }
+
+        img {
+          transition: filter 0.3s;
+        }
+
+      }
+    }
+  }
+
+  .exit_box {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .icon_btn {
+      border-color: #ffffff00;
+      background-color: #ffffff00;
+
+
+      &:hover {
+        .alertcrm {
+          border-radius: $borderRadius;
+          color: #a7a7a7;
+          display: inline-block;
+          background-color: #46c47a;
+          padding: 0.3rem;
+          color: $white;
+        }
+      }
+
+      .alertcrm {
+        top: 0;
+        left: 20%;
+        position: absolute;
+        display: none;
+      }
+    }
+  }
+
+}
+
+//end sidebar
+
+.main {
+  flex: 1;
+  border-radius: 0 0 30px 30px;
+  overflow: hidden;
+
+  .header_info {
+    position: fixed;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .text {
+      font-style: italic;
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: 0.03em;
+      text-align: center;
+      color: #596059;
+    }
+  }
+
+  .container_crm {
+    margin-top: 4rem;
+    //background-color: $white;
+    //border-radius: $borderRadius;
+    height: 100dvh;
+    // padding: 1rem;
+
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .flex_item-obj {
+      display: flex;
+      gap: 1rem;
+
+      .item_obj {
+        padding: 2.2rem;
+        border-radius: $borderRadius;
+        background-color: $white;
+      }
+
+      .obj_cart {
+        max-width: 550px;
+
+        .data_alert {
+          padding: 5px 15px;
+          border: 1px solid #e6ece5;
+          border-radius: 20px;
+          max-width: 172px;
+        }
+      }
+
+      .obj_body {
+        flex: 1;
+        padding: .5rem;
+        border-radius: $borderRadius;
+        background-color: $white;
+      }
+    }
+  }
+
+
+}
