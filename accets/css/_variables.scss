@@ -2,6 +2,11 @@ $primary: #16653F; // твой цвет
 
 $body-bg: #E6ECE5;
 
+$bs-border-radius: 0.5rem;
+
+$border-radius: .25rem;
+$border-width: 1px;
+
 a {
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -10,4 +15,9 @@ a {
 
 .alert {
   max-width: max-content;
+}
+
+.form-control {
+  border-radius: calc($border-radius - $border-width);
+  background: #e6ece5;
 }

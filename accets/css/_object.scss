@@ -1,0 +1,293 @@
+ .flex_item-obj {
+   display: flex;
+   gap: 1rem;
+
+   @include _768 {
+     flex-wrap: wrap;
+   }
+
+   .item_obj {
+     padding: 2.1rem;
+     border-radius: $borderRadius;
+     background-color: $white;
+   }
+
+   .obj_cart {
+     flex: 1 1 550px;
+     /* может и расти, и сжиматься */
+     max-width: 550px;
+     min-width: 250px;
+
+     @include _1024 {
+       flex: 1 1 380px;
+       max-width: 380px;
+     }
+
+     @include _768 {
+       flex: 0 0 100%;
+       max-width: 100%;
+     }
+
+     .data_alert {
+       padding: 5px 15px;
+       border: 1px solid #e6ece5;
+       border-radius: 20px;
+       max-width: 172px;
+     }
+
+     .phone {
+       display: flex;
+       gap: .5rem;
+       text-decoration: none;
+       color: $color_link;
+       align-items: center;
+       transition: $transition;
+
+       &:hover {
+         transition: $transition;
+         color: $primary;
+
+         img {
+           transition: $transition;
+           filter: invert(51%) sepia(86%) saturate(375%) hue-rotate(101deg) brightness(99%) contrast(94%);
+         }
+       }
+     }
+
+     .meneger_box {
+       display: flex;
+       align-items: center;
+       gap: 1rem;
+
+       .meneger_img {
+         position: relative;
+         border-radius: 50%;
+         overflow: hidden;
+         height: 85px;
+         width: 85px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 0.2rem;
+         transition: $transition;
+
+         .noneimg {
+           max-width: 85px;
+         }
+
+         &:hover {
+
+           border: 1px solid $color;
+
+           .icon_btn {
+
+             cursor: pointer;
+             opacity: 1;
+           }
+         }
+
+         img {
+           z-index: 1;
+         }
+
+         .icon_btn {
+           display: flex;
+           height: 30%;
+           width: 100px;
+           z-index: 2;
+           position: absolute;
+           background: linear-gradient(358deg, #22bb774d 0%, #a5db83c9 100%);
+           justify-content: center;
+           align-items: center;
+           top: 70%;
+           opacity: 0;
+         }
+
+       }
+     }
+
+
+     .status_obg {
+       display: grid;
+       gap: 1rem;
+
+       .status_info {
+         max-width: fit-content;
+         display: flex;
+         align-items: center;
+         gap: 1.5rem;
+         background: $color;
+         border-radius: 23px;
+         padding: .3rem .6rem;
+         color: $white;
+
+         letter-spacing: 0.03em;
+         font-style: italic;
+         font-weight: 600;
+         font-size: 21px;
+
+         span {
+           color: $color_link;
+           border-radius: 18px;
+           padding: .1rem .7rem;
+           box-shadow: -1px 2px 3px 0 rgba(0, 0, 0, 0.25);
+           background: $white;
+           font-weight: 600;
+           font-size: 18px;
+         }
+       }
+
+       .bg_status_twho {
+         border: 2.55px solid #fff;
+         box-shadow: -1px 1px 3px 0 rgba(0, 0, 0, 0.25);
+         background: white;
+         color: $color_link;
+
+         span {
+           border: 3px solid #e6ece5;
+           border-radius: 18px;
+           box-shadow: none;
+         }
+       }
+
+       .bg_status_three {
+         background: white;
+         border: 2.55px solid $color;
+         color: $color_link;
+
+         span {
+           border: 2.55px solid $color;
+           box-shadow: none;
+         }
+       }
+     }
+
+     .status_bar {
+       border-radius: 20px;
+
+       .progress {
+         min-height: 25px;
+         border-radius: 20px;
+       }
+
+       .progress-bar {
+         min-height: 25px;
+         border-radius: 20px;
+         background: linear-gradient(22deg, #defac6 3.83%, #def9c1 23.46%, #d9e785 67.84%, $color 100%);
+       }
+     }
+
+
+
+     .info_status_bar_text {
+       position: relative;
+       display: flex;
+       align-items: baseline;
+       max-width: 100%;
+
+       p {
+         margin: 0;
+         position: absolute;
+         left: 5%;
+         bottom: -11px;
+         font-weight: 600;
+         font-size: 28px;
+         letter-spacing: 0.05em;
+         background: linear-gradient(173deg, #dae786 0%, $color 100%);
+         background-clip: text;
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+       }
+     }
+   }
+
+   .time_box {
+     display: flex;
+     justify-content: end;
+   }
+
+   .obj_body {
+     flex: 1;
+     padding: .5rem;
+     border-radius: $borderRadius;
+     background-color: $white;
+   }
+ }
+
+
+ .obj_body_info {
+   flex: 1;
+
+   .nav-link {
+     color: $color_link;
+     border-radius: $borderRadius;
+     transition: $transition;
+     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+
+     &:hover {
+       background: $bgColor;
+       color: $white;
+       transition: $transition;
+       box-shadow: none;
+     }
+   }
+
+   .nav-tabs {
+     //box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+     background-color: $body-bg;
+     border-radius: $borderRadius;
+
+     .active {
+       box-shadow: none;
+       border-radius: $borderRadius;
+       background: $bgColor;
+       color: $white;
+       border: 0px;
+     }
+   }
+
+
+   .form-control {
+     border-radius: $borderRadius;
+   }
+
+   .zametki {
+     border-radius: $borderRadius;
+   }
+
+   table {
+     border-collapse: separate; // важно!
+     border-spacing: 0;
+
+
+     thead {
+       tr {
+         th {
+           background: $color;
+           color: $white;
+           padding: 0.75rem;
+         }
+
+         th:first-child {
+           border-top-left-radius: $borderRadius;
+         }
+
+         th:last-child {
+           border-top-right-radius: $borderRadius;
+         }
+       }
+     }
+
+     tbody {
+       tr:last-child {
+         th:first-child {
+           border-bottom-left-radius: $borderRadius;
+         }
+
+         td:last-child {
+           border-bottom-right-radius: $borderRadius;
+         }
+       }
+     }
+   }
+ }
