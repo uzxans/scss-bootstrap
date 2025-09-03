@@ -12763,23 +12763,53 @@ body {
 .main .container_crm::-webkit-scrollbar {
   display: none;
 }
+@media (max-width: 480px) {
+  .main .container_crm {
+    margin-bottom: 1rem;
+    height: 100%;
+    overflow-y: unset;
+    scrollbar-width: auto;
+  }
+}
 
 .header_mob {
+  display: none;
   background-color: #fff;
   padding: 0.7rem 0.5rem;
+  justify-content: space-between;
+  border-radius: 28px;
+  fill: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.12);
+  margin: 0 auto;
+  max-width: 96%;
+  margin-top: 1rem;
+}
+@media (max-width: 480px) {
+  .header_mob {
+    display: flex;
+  }
 }
 
 .footer_mob {
+  display: none;
   background-color: #fff;
-  padding: 0.7rem 0.5rem;
+  padding: 1rem 2rem;
   position: fixed;
   bottom: 0;
   z-index: 4;
   width: 100%;
+  stroke: rgba(205, 205, 205, 0.43);
+  box-shadow: 0 -2px 7px 0 rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 480px) {
+  .footer_mob {
+    display: block;
+  }
 }
 .footer_mob .footer_mob_box {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0;
   margin: 0;
 }
@@ -12788,4 +12818,8 @@ body {
 }
 .footer_mob .footer_mob_box li a {
   text-decoration: none;
+}
+.footer_mob .footer_mob_box li a img {
+  width: 2rem;
+  height: 2rem;
 }/*# sourceMappingURL=main.css.map */
