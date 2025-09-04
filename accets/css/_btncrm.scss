@@ -1,5 +1,6 @@
 .btn_srm {
   display: flex;
+  align-items: center;
   font-weight: 700;
   font-size: 18px;
   letter-spacing: 0.03em;
@@ -17,7 +18,7 @@
   }
 
   img {
-    margin-right: 14px;
+    margin: 0 14px;
   }
 }
 
@@ -94,5 +95,41 @@
   to {
     margin-bottom: -2%;
 
+  }
+}
+
+
+
+.btn_box {
+  background: linear-gradient(359deg, #daea8f 5.38%, #2b7 42.62%, #2b7 78.74%, #daea8f 100%);
+  border-radius: 25px;
+  padding: .3rem;
+  margin-bottom: 1rem;
+  // max-width: max-content;
+
+  .btn_add_object {
+    display: flex;
+    align-items: center;
+    place-items: center;
+    background: linear-gradient(359deg, #daea8f 5.38%, #2b7 42.62%, #2b7 78.74%, #daea8f 100%);
+    color: $white;
+    border-radius: $borderRadius;
+    font-weight: 600;
+    // font-size: 21px;
+    letter-spacing: 0.06em;
+    padding: .2rem 1rem;
+    text-decoration: none;
+    justify-content: space-between;
+    border: $white 3px solid;
+
+    img {
+      margin: 0 .3rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 4px 6px 0 rgba(34, 97, 100, 0.29);
+      background: $color
+    }
   }
 }

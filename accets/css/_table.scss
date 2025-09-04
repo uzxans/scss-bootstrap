@@ -1,0 +1,143 @@
+// .table {
+//   background-color: white !important;
+//   font-weight: 400;
+//   font-size: 16px;
+//   letter-spacing: 0.03em;
+//   text-align: center;
+//   --bs-table-color-state: #596059;
+//   --bs-table-bg: white;
+// }
+
+// .table> :not(caption)>*>* {
+//   font-weight: 400;
+// }
+
+// .table-striped>tbody>tr:nth-of-type(odd)>* {
+//   --bs-table-bg-type: #e6ece5;
+// }
+
+
+// table {
+//   border-collapse: separate; // важно!
+//   border-spacing: 0;
+
+
+//   thead {
+//     tr {
+//       th {
+//         background: $color;
+//         color: $white;
+//         padding: 0.75rem;
+//       }
+
+//       th:first-child {
+//         border-top-left-radius: $borderRadius;
+//       }
+
+//       th:last-child {
+//         border-top-right-radius: $borderRadius;
+//       }
+//     }
+//   }
+
+//   tbody {
+//     tr:last-child {
+//       th:first-child {
+//         border-bottom-left-radius: $borderRadius;
+//       }
+
+//       td:last-child {
+//         border-bottom-right-radius: $borderRadius;
+//       }
+//     }
+//   }
+// }
+
+.bg-table {
+  background: #e6ece5;
+}
+
+.resp-tab {
+  margin: .5rem 0;
+  border-radius: $borderRadius;
+  overflow: hidden;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+}
+
+.resp-tab th,
+.resp-tab td {
+  padding: 10px 20px;
+  border: none;
+  border: 1px solid #e6ece5;
+  vertical-align: top;
+}
+
+.resp-tab th {
+  //background: #D2DAD0;
+  color: #596059;
+  padding: 0.75rem;
+  // font-weight: bold;
+  // border: 1px solid #1a4a73;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include _480 {
+    width: 100%;
+  }
+}
+
+.resp-tab tr:nth-child(even) {
+  background: linear-gradient(22deg, #defac6 3.83%, #def9c1 23.46%, #d9e785 67.84%, #2b7 100%);
+}
+
+.resp-tab td span {
+  color: #FFF;
+  display: none;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media(max-width: 768px) {
+  .resp-tab {
+    border-radius: 0;
+  }
+
+  .obj_body_info table tbody tr:last-child td:last-child {
+    border-radius: 0;
+  }
+
+  .resp-tab thead {
+    display: none;
+  }
+
+  .resp-tab tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .resp-tab td {
+    margin: 0 -1px -1px 0;
+    padding-top: 35px;
+    position: relative;
+    width: 50%;
+  }
+
+  .resp-tab td span {
+    display: block;
+  }
+}
+
+@media(max-width: 480px) {
+  .resp-tab td {
+    width: 100%;
+  }
+}

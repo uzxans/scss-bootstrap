@@ -7,12 +7,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
+
 //media
 @import "./media";
 
 
-@import "./peremeniy";
+@import "./custom_var";
 @import "./btncrm";
+@import "./table";
 
 
 //object
@@ -24,93 +26,78 @@ body {
   letter-spacing: 0.03em;
 }
 
-.table {
-  background-color: white !important;
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 0.03em;
-  text-align: center;
-  --bs-table-color-state: #596059;
-  --bs-table-bg: white;
-}
 
-.table> :not(caption)>*>* {
-  font-weight: 400;
-}
-
-.table-striped>tbody>tr:nth-of-type(odd)>* {
-  --bs-table-bg-type: #e6ece5;
-}
 
 .inputbox {
   display: grid;
 
-  .custom_date {
-    display: flex;
-    justify-content: space-between;
+  // .custom_date {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   border-radius: $borderRadius;
+  //   background: #e6ece5;
+  //   padding: 5px;
+
+  //   input[type="date"] {
+  //     max-width: 110px;
+  //     appearance: none;
+  //     background: #e6ece5;
+  //     border: 0;
+  //     border-radius: $borderRadius;
+  //   }
+
+  //   input:focus {
+  //     outline: none;
+  //     border-color: #4a90e2;
+  //     box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+  //   }
+
+}
+
+
+.form-label {
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.input_castom {
+  position: relative;
+  display: inline-block;
+  background: #e6ece5;
+  border-radius: $borderRadius;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+
+  .castominput {
     border-radius: $borderRadius;
+    padding: 5px 15px;
+    width: 88%;
     background: #e6ece5;
-    padding: 5px;
-
-    input[type="date"] {
-      max-width: 110px;
-      appearance: none;
-      background: #e6ece5;
-      border: 0;
-      border-radius: $borderRadius;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: #4a90e2;
-      box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
-    }
-
+    border: 0;
   }
 
-  .form-label {
-    font-weight: 500;
-    font-size: 1rem;
-    letter-spacing: 0.03em;
-  }
+  .btn_icon {
+    flex: 1;
+    height: -webkit-fill-available;
+    background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20V17.48L17.18 4.28802C17.2833 4.19668 17.3967 4.12602 17.52 4.07602C17.6433 4.02602 17.7723 4.00068 17.907 4.00002C18.0417 3.99935 18.1717 4.02068 18.297 4.06402C18.4237 4.10602 18.5403 4.18201 18.647 4.29201L19.714 5.36602C19.824 5.47202 19.8993 5.58868 19.94 5.71602C19.98 5.84268 20 5.96935 20 6.09602C20 6.23202 19.9773 6.36202 19.932 6.48602C19.886 6.60935 19.8133 6.72235 19.714 6.82502L6.519 20H4ZM17.504 7.58902L19 6.11102L17.889 5.00002L16.412 6.49602L17.504 7.58902Z" fill="%23596059"/><path d="M3 22L18 22" stroke="%23596059" stroke-linecap="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: right 8px center;
+    background-color: rgba(255, 222, 173, 0);
+    border: 0;
+    transition: $transition;
 
-  .input_castom {
-    position: relative;
-    display: inline-block;
-    background: #e6ece5;
-    border-radius: $borderRadius;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    overflow: hidden;
-
-    .castominput {
-      border-radius: $borderRadius;
-      padding: 5px 15px;
-      width: 88%;
-      background: #e6ece5;
-      border: 0;
-    }
-
-    .btn_icon {
-      flex: 1;
-      height: -webkit-fill-available;
-      background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20V17.48L17.18 4.28802C17.2833 4.19668 17.3967 4.12602 17.52 4.07602C17.6433 4.02602 17.7723 4.00068 17.907 4.00002C18.0417 3.99935 18.1717 4.02068 18.297 4.06402C18.4237 4.10602 18.5403 4.18201 18.647 4.29201L19.714 5.36602C19.824 5.47202 19.8993 5.58868 19.94 5.71602C19.98 5.84268 20 5.96935 20 6.09602C20 6.23202 19.9773 6.36202 19.932 6.48602C19.886 6.60935 19.8133 6.72235 19.714 6.82502L6.519 20H4ZM17.504 7.58902L19 6.11102L17.889 5.00002L16.412 6.49602L17.504 7.58902Z" fill="%23596059"/><path d="M3 22L18 22" stroke="%23596059" stroke-linecap="round"/></svg>');
-      background-repeat: no-repeat;
-      background-size: 22px;
-      background-position: right 8px center;
-      background-color: rgba(255, 222, 173, 0);
-      border: 0;
+    &:hover {
       transition: $transition;
-
-      &:hover {
-        transition: $transition;
-        background-color: $color;
-      }
+      background-color: $color;
     }
   }
 }
+
 
 
 .item_container {
@@ -489,17 +476,25 @@ body {
 .main {
   flex: 1;
   border-radius: 0 0 30px 30px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   .header_info {
     position: fixed;
     display: flex;
     gap: 1rem;
     align-items: center;
+    background: #e6ece538;
+    backdrop-filter: blur(8px);
+    width: 100%;
 
     @include _1024 {
       position: sticky;
       top: 0;
+    }
+
+    @include _480 {
+      position: relative;
     }
 
     .text {
@@ -515,10 +510,10 @@ body {
   .container_crm {
     margin-top: 4rem;
     border-radius: $borderRadius;
-    height: 87vh;
-    overflow-y: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    // height: 87vh;
+    // overflow-y: auto;
+    // scrollbar-width: none;
+    // -ms-overflow-style: none;
 
     @include _1024 {
       margin-top: 1rem;
@@ -528,12 +523,12 @@ body {
       display: none;
     }
 
-    @include _480 {
-      margin-bottom: 1rem;
-      height: 100%;
-      overflow-y: unset;
-      scrollbar-width: auto;
-    }
+    // @include _480 {
+    //   margin-bottom: 1rem;
+    //   height: 100%;
+    //   overflow-y: unset;
+    //   scrollbar-width: auto;
+    // }
   }
 }
 
@@ -555,6 +550,9 @@ body {
 
   @include _480 {
     display: flex;
+    position: sticky;
+    top: 1%;
+    z-index: 9999;
   }
 }
 
@@ -596,6 +594,112 @@ body {
           height: 2rem;
         }
       }
+    }
+  }
+}
+
+
+
+
+
+///object-item
+.object_box_filter {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 1rem;
+}
+
+.object_box_filter-item {
+  flex: 1 0 32.333%;
+  min-width: 250px;
+  background-color: $white;
+  border-radius: $borderRadius;
+  padding: 1rem;
+  position: relative;
+  min-height: 200px;
+
+  .object_box_filter-item-footer {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .bg_numer_obj {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    // background: url('../../accets/img/bg-objects-users.png') no-repeat;
+    // background-size: cover;
+
+    p {
+      font-weight: 600;
+      font-size: 32px;
+      letter-spacing: 0.02em;
+      color: $white;
+      padding: .5rem;
+      margin-bottom: 0;
+      background: linear-gradient(359deg, #daea8f 5.38%, #2b7 42.62%, #2b7 78.74%, #daea8f 100%);
+      border-radius: 100% 0 0 0;
+      padding-top: 30px;
+      padding-left: 30px;
+    }
+  }
+}
+
+.form-select {
+  border-radius: $borderRadius;
+}
+
+.select {
+  padding: .5rem;
+  color: $white;
+  border-radius: $borderRadius;
+  background: linear-gradient(178deg, #2b7 0%, #dae888 100%);
+  box-shadow: rgba(157, 238, 201, 0.405) -2px 3px 12px -3px;
+
+  .form-select {
+    background: $white;
+  }
+}
+
+
+
+.objects {
+  display: flex;
+  grid-gap: 20px;
+  justify-content: space-between;
+
+  &-item {
+    width: 100%;
+    padding: 1rem;
+    border-radius: $borderRadius;
+    background-color: $white;
+
+    &_header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 13px;
+
+      button {
+        border: 0;
+        background-color: #00000000;
+      }
+    }
+
+    &_body {
+      p {
+        display: flex;
+        margin-bottom: 6px;
+        align-items: center;
+      }
+
+      .location {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &_footer {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

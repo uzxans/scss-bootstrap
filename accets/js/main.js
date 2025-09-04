@@ -1,10 +1,18 @@
-const startDate = document.getElementById('start-date');
-const endDate = document.getElementById('end-date');
 
-startDate.addEventListener('change', function() {
-  endDate.min = this.value;
+
+flatpickr("#daterange", {
+  mode: "range", // выбор диапазона
+  dateFormat: "d.m.Y", // формат даты
+  locale: "ru" // русская локаль (подключает русский календарь)
 });
 
+
+// const startDate = document.getElementById('start-date');
+// const endDate = document.getElementById('end-date');
+
+// startDate.addEventListener('change', function() {
+//   endDate.min = this.value;
+// });
 
 
 
@@ -22,3 +30,5 @@ document.addEventListener('click', (e) => {
     sidebar.classList.toggle('sidebar_activ_mob');
   }
 });
+
+

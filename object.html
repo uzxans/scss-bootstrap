@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> -->
+
+  <!-- Подключаем flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+  <link rel="stylesheet" href="./css/main.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="header_mob container py-2">
+    <img src="./accets/img/logo_mob.svg" alt="" class="logo_img_mob">
+    <a href="/"><img src="./accets/icon/user_mob_prof.svg" alt=""></a>
+  </div>
+
+  <div class="item_container">
+
+    <div class="sidebar">
+      <div class="logo_box">
+        <img src="./accets/img/logo.svg" alt="" class="logo_img">
+        <img src="./accets/img/logo_mob.svg" alt="" class="logo_img_mob">
+      </div>
+      <!-- <button class="btn_menu"><img src="./accets/img/btn_menu.svg" alt=""></button> -->
+      <button class="btn_menu">
+        <div class="icon-container">
+          <!-- Исходный SVG с точками -->
+          <svg class="dots-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 10 16"
+            fill="none">
+            <rect width="4" height="4" rx="2" fill="#22BB77" />
+            <rect x="6" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect y="6" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect x="6" y="6" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect y="12" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect x="6" y="12" width="4" height="4" rx="2" fill="#22BB77" />
+          </svg>
+
+          <!-- SVG со стрелкой (замените на свою стрелку) -->
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+            fill="none">
+            <path d="M15 18L9 12L15 6" stroke="#22BB77" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+      </button>
+
+
+      <!-- <div class="btn_menu_Mob btn btn-primary">
+        <i class="bi bi-list"></i>
+      </div> -->
+      <div class="menu">
+        <ul>
+          <li><a href=""><img src="./accets/img/icon/search.svg" alt="search"><span>Поиск</span></a></li>
+          <li><a class="active" href="#"><img src="./accets/img/icon/admin.svg" alt="search">
+              <span>Администрирование</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/sales.svg" alt="search"><span>Отдел продаж</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/priglasheniya.svg" alt="search"><span>Приглашения</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/analitika.svg" alt="search"><span>Аналитика</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/obyekt.svg" alt="search"><span>Объекты</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/hr.svg" alt="search"><span>HR</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/zayavki.svg" alt="search"><span>Мои заявки</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/myprofil.svg" alt="search"><span>Мой аккаунт</span></a></li>
+          <hr>
+          <li><a href=""><img src="./accets/img/icon/video.svg" alt="search"><span>Видео встреча</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/bazaznaniy.svg" alt="search"><span>База знаний</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/texpoderjka.svg" alt="search"><span>Тех. поддержка</span></a></li>
+        </ul>
+      </div>
+      <!-- end menu -->
+
+      <div class="exit_box">
+        <button class="icon_btn"><img src="./accets/img/icon/exit.svg" alt="">
+          <span class="alertcrm">Выход из системы</span>
+        </button>
+        <button class="icon_btn">
+          <span class="alertcrm">Переключить тему</span>
+          <img src="./accets/img/icon/uil_sun.svg" alt="">
+        </button>
+      </div>
+
+      <button class="btn btn-primary menu_btn_close_mob"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <!-- end sidebar -->
+
+    <div class="main">
+
+      <div class="header_info">
+        <button class="btn_srm"><img src="./accets/img//icon/back.svg" alt="back">Назад</button>
+        <img src="./accets/img/icon/linehr.svg" alt="">
+        <div class="text">
+          ООО ПолиМетПром (ПМП)
+        </div>
+      </div>
+      <!-- End header_info -->
+
+      <div class="container_crm">
+
+        <div class="flex_item-obj">
+          <div class="item_obj obj_cart">
+            <h2>ООО ПолиМетПром (ПМП)</h2>
+            <div class="data_alert" role="alert">
+              <span class="me-2">Дата</span>23.06.2024
+            </div>
+            <hr>
+            <a class="phone mb-4" href="">
+              <img src="./accets/img/icon/phone.svg" alt="phone">
+              <span>+7(812)380-67-20</span>
+            </a>
+
+            <div class="meneger_box mb-5">
+              <div class="meneger_img">
+                <img class="noneimg" src="./accets/img/meneger_pleasholder.png" alt="">
+                <div class="icon_btn">
+                  <svg width="29" height="21" viewBox="0 0 29 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M24.9751 6.67513C24.6599 6.67513 24.3959 6.56833 24.183 6.35473C23.9701 6.14112 23.8633 5.87709 23.8626 5.56261V4.45009H22.7501C22.4349 4.45009 22.1708 4.34329 21.958 4.12968C21.7451 3.91608 21.6383 3.65204 21.6376 3.33757C21.6368 3.0231 21.7436 2.75906 21.958 2.54545C22.1723 2.33185 22.4363 2.22505 22.7501 2.22505H23.8626V1.11253C23.8626 0.797311 23.9694 0.533273 24.183 0.32041C24.3966 0.107548 24.6607 0.000745517 24.9751 3.83628e-06C25.2896 -0.000737845 25.554 0.106064 25.7684 0.32041C25.9827 0.534756 26.0891 0.798794 26.0876 1.11253V2.22505H27.2002C27.5154 2.22505 27.7798 2.33185 27.9934 2.54545C28.207 2.75906 28.3134 3.0231 28.3127 3.33757C28.3119 3.65204 28.2051 3.91645 27.9923 4.1308C27.7794 4.34514 27.5154 4.45157 27.2002 4.45009H26.0876V5.56261C26.0876 5.87783 25.9808 6.14224 25.7672 6.35584C25.5536 6.56944 25.2896 6.67588 24.9751 6.67513ZM12.9085 17.672C14.2992 17.672 15.4814 17.1854 16.4553 16.2124C17.4291 15.2393 17.9156 14.057 17.9149 12.6656C17.9141 11.2742 17.4276 10.0924 16.4553 9.12003C15.4829 8.14769 14.3007 7.66077 12.9085 7.65929C11.5164 7.6578 10.3345 8.14472 9.36293 9.12003C8.39133 10.0953 7.90442 11.2772 7.90219 12.6656C7.89997 14.0541 8.38688 15.2363 9.36293 16.2124C10.339 17.1884 11.5209 17.675 12.9085 17.672ZM12.9085 15.4469C12.1298 15.4469 11.4715 15.1781 10.9338 14.6404C10.3961 14.1026 10.1272 13.4444 10.1272 12.6656C10.1272 11.8869 10.3961 11.2286 10.9338 10.6909C11.4715 10.1532 12.1298 9.88433 12.9085 9.88433C13.6873 9.88433 14.3455 10.1532 14.8833 10.6909C15.421 11.2286 15.6898 11.8869 15.6898 12.6656C15.6898 13.4444 15.421 14.1026 14.8833 14.6404C14.3455 15.1781 13.6873 15.4469 12.9085 15.4469ZM2.63911 20.1966C2.02722 20.1966 1.50359 19.9789 1.06823 19.5435C0.632859 19.1081 0.414804 19.9534 0.414062 19.3408V6.67513C0.414062 6.06325 0.632117 5.53962 1.06823 5.10425C1.50433 4.66889 2.02796 4.45083 2.63911 4.45009H7.51281L8.90346 2.94819C9.10742 2.72568 9.35329 2.54953 9.64106 2.41974C9.92883 2.28994 10.23 2.22505 10.5444 2.22505H18.3C18.6152 2.22505 18.8796 2.33185 19.0932 2.54545C19.3068 2.75906 19.4133 3.0231 19.4125 3.33757V5.00635C19.4125 5.4699 19.5749 5.86411 19.8998 6.18896C20.2247 6.51382 20.6185 6.67588 21.0813 6.67513H21.6376V7.2314C21.6376 7.69495 21.8 8.08915 22.1248 8.41401C22.4497 8.73886 22.8435 8.90092 23.3063 8.90018H24.9751C25.2903 8.90018 25.5547 9.00698 25.7684 9.22058C25.982 9.43419 26.0884 9.69823 26.0876 10.0127V17.9715C26.0876 18.5834 25.87 19.1074 25.4346 19.5435C24.9992 19.9796 24.4752 20.1973 23.8626 20.1966H2.63911Z"
+                      fill="white" />
+                  </svg>
+                </div>
+              </div>
+              <div class="meneger_info">
+                <p class="mb-0">
+                  <strong>Менеджер</strong><br>
+                  Александр
+                </p>
+              </div>
+            </div>
+
+            <div class="status_obg mb-5">
+              <div class="status_info">Работают<span>44</span></div>
+              <div class="status_info bg_status_twho">Количество<span>64</span></div>
+              <div class="status_info bg_status_three">Потребуется<span>20</span></div>
+            </div>
+
+            <div class="status_bar mb-4">
+              <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0"
+                aria-valuemax="100">
+                <div class="progress-bar" style="width: 75%"></div>
+              </div>
+            </div>
+            <!-- End status_bar -->
+
+            <div class="info_status_bar_text">
+              <img class="info_status_bar_text_icon" src="./accets/img/icon_statusbar.png" alt="">
+              <p class="info_status_bar_text_number">+64</p>
+            </div>
+
+            <div class="time_box">
+              <a class="btnLink" href="#">
+                <span>Часы работы</span>
+                <img src="./accets/img/icon/setting_time.svg" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="item_obj obj_body_info">
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                  type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Информация об
+                  объекте</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                  type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Файлы</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                  type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Заметки</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane"
+                  type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false"
+                  disabled>Работники</button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                tabindex="0">
+                <form class="row mt-4" action="">
+                  <div class="col-xl-6 mb-3">
+                    <div class="inputbox">
+                      <label for="name" class="form-label">Название объекта</label>
+                      <input id="name " type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-xl-6 mb-3">
+                    <div class="inputbox">
+                      <label for="phone" class="form-label">Телефон</label>
+                      <input id="phone " type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-xl-6 mb-3">
+                    <div class="inputbox">
+                      <label class="form-label">Дата начала - Дата окончания</label>
+                      <div class="date-range">
+                        <input class="form-control" id="daterange">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 mb-3">
+                    <div class="inputbox">
+                      <label for="numberperson" class="form-label">Количество рабочих</label>
+                      <input id="numberperson " type="number" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-xl-6 mb-3">
+                    <div class="inputbox">
+                      <label for="meneger" class="form-label">Менеджер</label>
+                      <input id="meneger " type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-xl-6 mb-3">
+                    <div class="inputbox">
+                      <label for="inn" class="form-label">ИНН</label>
+                      <input id="inn " type="number" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <div class="inputbox">
+                      <label for="adres" class="form-label">Адрес</label>
+                      <textarea id="adres" type="text" class="form-control" row="30">
+                        </textarea>
+                      <!-- <div class="input_castom">
+                        <input type="text" class="castominput" id="adres">
+                        <button class="btn_icon"></button>
+                      </div> -->
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <button class="btnLink mt-3" type="button">Сохранить данные</button>
+                  </div>
+                </form>
+
+              </div>
+              <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                tabindex="0">
+                <table class="resp-tab">
+                  <thead>
+                    <tr class="bg-table">
+                      <th>№</th>
+                      <th>Название файла</th>
+                      <th>Файл</th>
+                      <th>Действия</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>1</th>
+                      <td>Mark</td>
+                      <td>
+                        <a class="btn btn-danger" href=""><i class="bi bi-file-earmark-pdf"></i></a>
+                      </td>
+                      <td><button class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i></button>
+                        <button class="btn btn-primary btn-sm"><i class="bi bi-download"></i></button>
+                        <button class="btn btn-warning btn-sm"><i class="bi bi-share"></i></button>
+                      </td>
+                    </tr>
+                    <!-- Еще строки -->
+                    <tr>
+                      <th>2</th>
+                      <td>Jacob</td>
+                      <td><a class="btn btn-primary" href=""><i class="bi bi-file-earmark-word"></i></a></td>
+                      <td><button class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i></button>
+                        <button class="btn btn-primary btn-sm"><i class="bi bi-download"></i></button>
+                        <button class="btn btn-warning btn-sm"><i class="bi bi-share"></i></button>
+                      </td>
+                    </tr>
+                    <!-- Еще строки -->
+                    <tr>
+                      <th>3</th>
+                      <td>Jacob</td>
+                      <td><a class="btn btn-primary" href=""><i class="bi bi-file-earmark-word"></i></a></td>
+                      <td><button class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i></button>
+                        <button class="btn btn-primary btn-sm"><i class="bi bi-download"></i></button>
+                        <button class="btn btn-warning btn-sm"><i class="bi bi-share"></i></button>
+                      </td>
+                    </tr>
+                    <!-- Еще строки -->
+                    <tr>
+                      <th>4</th>
+                      <td>Jacob</td>
+                      <td><a class="btn btn-primary" href=""><i class="bi bi-file-earmark-word"></i></a></td>
+                      <td><button class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i></button>
+                        <button class="btn btn-primary btn-sm"><i class="bi bi-download"></i></button>
+                        <button class="btn btn-warning btn-sm"><i class="bi bi-share"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button class="btnLink" type="button">Добавить файл</button>
+              </div>
+              <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
+                tabindex="0">
+                <div class="form-floating">
+                  <textarea class="form-control zametki mt-3" placeholder="Leave a comment here" id="floatingTextarea2"
+                    style="height: 150px"></textarea>
+                  <label for="floatingTextarea2">Заметки</label>
+                </div>
+                <button class="btnLink mt-3" type="button">Сохранить заметку</button>
+              </div>
+              <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
+                tabindex="0">...
+              </div>
+            </div>
+          </div>
+          <!--End obj_body_info-->
+        </div>
+        <!--End flex_item-obj-->
+      </div>
+      <!-- end container_crm -->
+    </div>
+    <!-- end main -->
+  </div>
+
+
+  <div class="footer_mob">
+    <ul class="footer_mob_box">
+      <li><a href=""><img src="./accets/img/icon/analitika.svg" alt="search"></a></li>
+      <li><a href=""><img src="./accets/img/icon/obyekt.svg" alt="search"></a></li>
+      <li><a href=""><img src="./accets/img/icon/hr.svg" alt="search"></a></li>
+      <li><a href=""><svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.28516 2H29.6313" stroke="#22BB77" stroke-width="3" stroke-linecap="round" />
+            <path d="M2.28516 10H29.6313" stroke="#22BB77" stroke-width="3" stroke-linecap="round" />
+            <path d="M2.28516 18H29.6313" stroke="#22BB77" stroke-width="3" stroke-linecap="round" />
+          </svg></a></li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+  <script src="/accets/js/main.js"></script>
+</body>
+
+</html>
