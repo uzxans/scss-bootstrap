@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> -->
+
+  <!-- Подключаем flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+  <link rel="stylesheet" href="./css/main.css">
+  <title>System LK</title>
+</head>
+
+<body>
+  <div class="header_mob container py-2">
+    <img src="./accets/img/logo_mob.svg" alt="" class="logo_img_mob">
+    <a href="/"><img src="./accets/icon/user_mob_prof.svg" alt=""></a>
+  </div>
+
+  <div class="item_container">
+
+    <div class="sidebar">
+      <div class="logo_box">
+        <img src="./accets/img/logo.svg" alt="" class="logo_img">
+        <img src="./accets/img/logo_mob.svg" alt="" class="logo_img_mob">
+      </div>
+      <!-- <button class="btn_menu"><img src="./accets/img/btn_menu.svg" alt=""></button> -->
+      <button class="btn_menu">
+        <div class="icon-container">
+          <!-- Исходный SVG с точками -->
+          <svg class="dots-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 10 16"
+            fill="none">
+            <rect width="4" height="4" rx="2" fill="#22BB77" />
+            <rect x="6" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect y="6" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect x="6" y="6" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect y="12" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect x="6" y="12" width="4" height="4" rx="2" fill="#22BB77" />
+          </svg>
+
+          <!-- SVG со стрелкой (замените на свою стрелку) -->
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+            fill="none">
+            <path d="M15 18L9 12L15 6" stroke="#22BB77" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+      </button>
+
+
+      <!-- <div class="btn_menu_Mob btn btn-primary">
+        <i class="bi bi-list"></i>
+      </div> -->
+      <div class="menu">
+        <ul>
+          <li><a href=""><img src="./accets/img/icon/search.svg" alt="search"><span>Поиск</span></a></li>
+          <li><a class="active" href="#"><img src="./accets/img/icon/admin.svg" alt="search">
+              <span>Администрирование</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/sales.svg" alt="search"><span>Отдел продаж</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/priglasheniya.svg" alt="search"><span>Приглашения</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/analitika.svg" alt="search"><span>Аналитика</span></a></li>
+          <li><a href="/object.html"><img src="./accets/img/icon/obyekt.svg" alt="search"><span>Объекты</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/hr.svg" alt="search"><span>HR</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/zayavki.svg" alt="search"><span>Мои заявки</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/myprofil.svg" alt="search"><span>Мой аккаунт</span></a></li>
+          <hr>
+          <li><a href=""><img src="./accets/img/icon/video.svg" alt="search"><span>Видео встреча</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/bazaznaniy.svg" alt="search"><span>База знаний</span></a></li>
+          <li><a href=""><img src="./accets/img/icon/texpoderjka.svg" alt="search"><span>Тех. поддержка</span></a></li>
+        </ul>
+      </div>
+      <!-- end menu -->
+
+      <div class="exit_box">
+        <button class="icon_btn"><img src="./accets/img/icon/exit.svg" alt="">
+          <span class="alertcrm">Выход из системы</span>
+        </button>
+        <button class="icon_btn">
+          <span class="alertcrm">Переключить тему</span>
+          <img src="./accets/img/icon/uil_sun.svg" alt="">
+        </button>
+      </div>
+
+      <button class="btn btn-primary menu_btn_close_mob"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <!-- end sidebar -->
+
+    <div class="main">
+
+      <div class="header_info">
+        <h1>HR</h1>
+      </div>
+      <!-- End header_info -->
+
+      <div class="container_crm">
+
+      </div>
+      <!-- end container_crm -->
+    </div>
+    <!-- end main -->
+  </div>
+
+
+  <div class="footer_mob">
+    <ul class="footer_mob_box">
+      <li><a href=""><img src="./accets/img/icon/analitika.svg" alt="search"></a></li>
+      <li><a href=""><img src="./accets/img/icon/obyekt.svg" alt="search"></a></li>
+      <li><a href=""><img src="./accets/img/icon/hr.svg" alt="search"></a></li>
+      <li><a href=""><svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.28516 2H29.6313" stroke="#22BB77" stroke-width="3" stroke-linecap="round" />
+            <path d="M2.28516 10H29.6313" stroke="#22BB77" stroke-width="3" stroke-linecap="round" />
+            <path d="M2.28516 18H29.6313" stroke="#22BB77" stroke-width="3" stroke-linecap="round" />
+          </svg></a></li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+  <script src="/accets/js/main.js"></script>
+</body>
+
+</html>

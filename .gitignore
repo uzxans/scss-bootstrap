@@ -1,0 +1,49 @@
+# ---------------------------
+# OS
+# ---------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------------------------
+# PHP / Composer
+# ---------------------------
+vendor/
+composer.lock
+.env
+.env.local
+.env.*.backup
+.phpunit.result.cache
+.php_cs.cache
+
+# ---------------------------
+# Node / NPM / Yarn (если есть фронтенд)
+# ---------------------------
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ---------------------------
+# IDE / Editor
+# ---------------------------
+
+# PhpStorm
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# ---------------------------
+# Logs & Cache
+# ---------------------------
+*.log
+storage/logs/
+storage/framework/cache/data/
+storage/framework/views/
+storage/framework/sessions/
