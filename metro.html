@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Метро СПб</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    select,
+    input {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Выберите станцию метро</h2>
+
+  <label>Линия:</label>
+  <select id="lineSelect">
+    <option value="">-- Выберите линию --</option>
+    <option value="red">Красная</option>
+    <option value="blue">Синяя</option>
+    <option value="green">Зелёная</option>
+    <option value="purple">Фиолетовая</option>
+    <option value="yellow">Жёлтая</option>
+  </select>
+
+  <label>Станция:</label>
+  <select id="stationSelect" disabled>
+    <option value="">-- Сначала выберите линию --</option>
+  </select>
+
+  <input type="text" id="stationInput" placeholder="Выбранная станция" readonly />
+
+  <script>
+    const lines = {
+      red: ["Девяткино", "Гражданский проспект", "Академическая", "Политехническая", "Площадь Мужества", "Лесная", "Выборгская", "Площадь Ленина", "Чернышевская", "Площадь Восстания", "Владимирская", "Технологический институт", "Балтийская", "Нарвская", "Кировский завод", "Автово", "Ленинский проспект", "Проспект Ветеранов"],
+      blue: ["Парнас", "Проспект Просвещения", "Озерки", "Удельная", "Пионерская", "Чёрная речка", "Петроградская", "Горьковская", "Невский проспект", "Сенная площадь", "Технологический институт", "Фрунзенская", "Московские ворота", "Электросила", "Парк Победы", "Московская", "Звёздная", "Купчино"],
+      green: ["Беговая", "Зенит", "Приморская", "Василеостровская", "Гостиный двор", "Маяковская", "Площадь Александра Невского", "Елизаровская", "Ломоносовская", "Пролетарская", "Обухово", "Рыбацкое"],
+      purple: ["Комендантский проспект", "Старая деревня", "Крестовский остров", "Чкаловская", "Спортивная", "Адмиралтейская", "Садовая", "Звенигородская", "Обводный канал", "Волковская", "Бухарестская", "Международная", "Проспект Славы", "Дунайская", "Шушары"],
+      yellow: ["Спасская", "Достоевская", "Лиговский проспект", "Новочеркасская", "Ладожская", "Проспект Большевиков", "Улица Дыбенко"]
+    };
+
+    const lineSelect = document.getElementById("lineSelect");
+    const stationSelect = document.getElementById("stationSelect");
+    const input = document.getElementById("stationInput");
+
+    lineSelect.addEventListener("change", () => {
+      const line = lineSelect.value;
+      stationSelect.innerHTML = "";
+      input.value = "";
+
+      if (line && lines[line]) {
+        stationSelect.disabled = false;
+        lines[line].forEach(st => {
+          const option = document.createElement("option");
+          option.value = st;
+          option.textContent = st;
+          stationSelect.appendChild(option);
+        });
+      } else {
+        stationSelect.disabled = true;
+        const option = document.createElement("option");
+        option.textContent = "-- Сначала выберите линию --";
+        stationSelect.appendChild(option);
+      }
+    });
+
+    stationSelect.addEventListener("change", () => {
+      input.value = stationSelect.value;
+    });
+  </script>
+</body>
+
+</html>

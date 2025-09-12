@@ -13,6 +13,7 @@
 
 
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./accets/fonts/style.css">
   <title>Document</title>
 </head>
 
@@ -58,20 +59,18 @@
       </div> -->
       <div class="menu">
         <ul>
-          <li><a href=""><img src="./accets/img/icon/search.svg" alt="search"><span>Поиск</span></a></li>
-          <li><a class="active" href="#"><img src="./accets/img/icon/admin.svg" alt="search">
+          <li><a href=""><i class="icon-search"></i><span>Поиск</span></a></li>
+          <li><a class="active" href="#"><i class="icon-admin"></i>
               <span>Администрирование</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/sales.svg" alt="search"><span>Отдел продаж</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/priglasheniya.svg" alt="search"><span>Приглашения</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/analitika.svg" alt="search"><span>Аналитика</span></a></li>
-          <li><a href="/object.html"><img src="./accets/img/icon/obyekt.svg" alt="search"><span>Объекты</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/hr.svg" alt="search"><span>HR</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/zayavki.svg" alt="search"><span>Мои заявки</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/myprofil.svg" alt="search"><span>Мой аккаунт</span></a></li>
+          <li><a href=""><i class="icon-analytics"></i><span>Аналитика</span></a></li>
+          <li><a href="/object.html"><i class="icon-big-objects"></i><span>Объекты</span></a></li>
+          <li><a href=""><i class="person2-icon"></i><span>HR</span></a></li>
+          <li><a href=""><i class="icon-big-application"></i><span>Мои заявки</span></a></li>
+          <li><a href=""><i class="icon-account"></i><span>Мой аккаунт</span></a></li>
           <hr>
-          <li><a href=""><img src="./accets/img/icon/video.svg" alt="search"><span>Видео встреча</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/bazaznaniy.svg" alt="search"><span>База знаний</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/texpoderjka.svg" alt="search"><span>Тех. поддержка</span></a></li>
+          <li><a href=""><i class="video-little-icon"></i><span>Видео встреча</span></a></li>
+          <li><a href=""><i class="icon-knowledge"></i><span>База знаний</span></a></li>
+          <li><a href=""><i class="icon-support"></i><span>Тех. поддержка</span></a></li>
         </ul>
       </div>
       <!-- end menu -->
@@ -93,11 +92,132 @@
     <div class="main">
 
       <div class="header_info">
-        <h1>HR</h1>
+        <h1>Управление заявками</h1>
       </div>
       <!-- End header_info -->
 
       <div class="container_crm">
+        <div class="filter_container mb-5">
+          <p>Фильтр</p>
+          <div class="filter">
+            <div class="filter-input" id="filterInput">
+              <div class="tags" id="tags"></div>
+              <input type="text" placeholder="Фильтр..." readonly />
+              <button class="toggle" id="toggleBtn">
+                <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M18 18.5469L13.8983 14.4452M13.8983 14.4452C14.5999 13.7436 15.1565 12.9107 15.5362 11.994C15.9159 11.0773 16.1113 10.0948 16.1113 9.10254C16.1113 8.11031 15.9159 7.12781 15.5362 6.21111C15.1565 5.29442 14.5999 4.46149 13.8983 3.75988C13.1967 3.05827 12.3638 2.50172 11.4471 2.12202C10.5304 1.74231 9.54789 1.54687 8.55566 1.54688C7.56344 1.54688 6.58093 1.74231 5.66424 2.12202C4.74754 2.50172 3.91461 3.05827 3.213 3.75988C1.79604 5.17684 1 7.09865 1 9.10254C1 11.1064 1.79604 13.0282 3.213 14.4452C4.62996 15.8622 6.55178 16.6582 8.55566 16.6582C10.5596 16.6582 12.4814 15.8622 13.8983 14.4452Z"
+                    stroke="#596059" stroke-width="1.45354" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="dropdown" id="dropdown">
+              <div class="tabs">
+                <button data-tab="status" class="active">СТАТУС</button>
+                <button data-tab="object">ВЫБОР ОБЪЕКТА</button>
+                <button data-tab="date">ДАТА</button>
+                <button data-tab="hr">HR</button>
+                <button data-tab="metro">МЕТРО</button>
+                <button data-tab="name">ФИО</button>
+
+              </div>
+
+              <div class="tab-content active" id="status">
+                <div class="title_tab_content">Статус для отбора</div>
+                <div class="option_box">
+                  <div class="option" data-value="Все">Все</div>
+                  <div class="option btn-status" data-value="Работает">Работает</div>
+                  <div class="option btn-status" data-value="Напомнить">Напомнить</div>
+                  <div class="option btn-status reserv" data-value="Резерв">Резерв</div>
+                  <div class="option btn-status" data-value="Уволен">Уволен</div>
+                  <div class="option btn-status" data-value="Напомнить">Напомнить</div>
+                  <div class="option btn-status" data-value="Резерв">Резерв</div>
+                  <div class="option btn-status" data-value="Уволен">Уволен</div>
+                </div>
+              </div>
+
+
+              <!--Object-->
+              <div class="tab-content" id="object">
+                <div class="title_tab_content">Выбор объекта</div>
+                <select class="form-select my-3" aria-label="Default select example">
+                  <option selected>Выбрать</option>
+                  <option class="option" data-value="Обухова">Обухова</option>
+                  <option class="option" data-value="ПМП">ПМП</option>
+                </select>
+              </div>
+
+              <!--Data-->
+              <div class="tab-content" id="date">
+                <div class="title_tab_content">Выбор даты</div>
+                <input class="form-control flatpickr-input active my-3" id="daterange" type="text" readonly="readonly">
+              </div>
+
+              <!--Data-->
+              <div class="tab-content" id="hr">
+                <div class="title_tab_content">Выбор HR</div>
+                <select class="form-select my-3" aria-label="Default select example">
+                  <option selected>Выбрать</option>
+                  <option data-value="Виетоия">Виктория</option>
+                  <option data-value="Руслан">Руслан</option>
+                </select>
+              </div>
+
+              <!--metro-->
+              <div class="tab-content" id="metro">
+                <div class="title_tab_content">Выбрать станцию</div>
+                <input class="form-control my-3" type="text" data-value="" placeholder="Поиск в ручную">
+                <div class="title_tab_content">Найти станцию на карте</div>
+              </div>
+
+
+              <!--FIO-->
+              <div class="tab-content name" id="name">
+                <div class="title_tab_content my-3">Поиск ФИО</div>
+                <input class="form-control" type="text" data-value="">
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 my-3"><button class="btn_srm">Мои заявки<i class="icon-big-application"></i></button>
+          </div>
+          <div class="col-md-6 my-3"><button class="btn_srm">Экспорт в Excel</button></div>
+        </div>
+
+        <!--User-Kanban-->
+        <div class="board" id="board">
+          <div class="column" data-status="Работает">
+            <h3 class="status_work">Работает</h3>
+            <button class="btn_add_user mb-3">Добавить работника <i class="add-button-icon"></i></button>
+            <div class="cards"></div>
+          </div>
+          <div class="column" data-status="Напомнить">
+            <h3 class="status_new">Соискатель</h3>
+            <div class="cards"></div>
+          </div>
+          <div class="column" data-status="Резерв">
+            <h3 class="status_rezerv">Резерв</h3>
+            <div class="cards"></div>
+          </div>
+          <div class="column" data-status="Уволен">
+            <h3 class="status_fired">Уволен</h3>
+            <div class="cards"></div>
+          </div>
+          <div class="column" data-status="Уволен">
+            <h3 class="status_remind">Напомнить</h3>
+            <div class="cards"></div>
+          </div>
+          <div class="column" data-status="Уволен">
+            <h3 class="status_refusal">Отказ</h3>
+            <div class="cards"></div>
+          </div>
+        </div>
+
 
       </div>
       <!-- end container_crm -->
@@ -106,16 +226,14 @@
   </div>
 
 
+
+
   <div class="footer_mob">
     <ul class="footer_mob_box">
-      <li><a href=""><img src="./accets/img/icon/analitika.svg" alt="search"></a></li>
-      <li><a href=""><img src="./accets/img/icon/obyekt.svg" alt="search"></a></li>
-      <li><a href=""><img src="./accets/img/icon/hr.svg" alt="search"></a></li>
-      <li><a href=""><svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2.28516 2H29.6313" stroke="#22BB77" stroke-width="3" stroke-linecap="round" />
-            <path d="M2.28516 10H29.6313" stroke="#22BB77" stroke-width="3" stroke-linecap="round" />
-            <path d="M2.28516 18H29.6313" stroke="#22BB77" stroke-width="3" stroke-linecap="round" />
-          </svg></a></li>
+      <li><a href=""><i class="icon-search"></i></a></li>
+      <li><a href=""><i class="icon-big-objects"></i></a></li>
+      <li><a href=""><i class="person2-icon"></i></a></li>
+      <li><a href=""><i class="list-large-icon"></i></a></li>
     </ul>
   </div>
 
