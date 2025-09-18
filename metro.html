@@ -5,80 +5,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Метро СПб</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
-
-    select,
-    input {
-      margin: 10px;
-      padding: 10px;
-      font-size: 16px;
-    }
-  </style>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=f91be44c-c2f8-4cae-957c-05242255a5cb&lang=ru_RU"
+    type="text/javascript"></script>
+  <script src="https://yandex.ru/metro/api/third-party" type="text/javascript"></script>
 </head>
 
 <body>
   <h2>Выберите станцию метро</h2>
-
-  <label>Линия:</label>
-  <select id="lineSelect">
-    <option value="">-- Выберите линию --</option>
-    <option value="red">Красная</option>
-    <option value="blue">Синяя</option>
-    <option value="green">Зелёная</option>
-    <option value="purple">Фиолетовая</option>
-    <option value="yellow">Жёлтая</option>
-  </select>
-
-  <label>Станция:</label>
-  <select id="stationSelect" disabled>
-    <option value="">-- Сначала выберите линию --</option>
-  </select>
-
-  <input type="text" id="stationInput" placeholder="Выбранная станция" readonly />
+  <div class="metro-container">
+    <input type="text" id="metro-station-input" placeholder="Выберите станцию метро" readonly>
+    <div id="metro-map" style="width: 100%; height: 500px;"></div>
+  </div>
 
   <script>
-    const lines = {
-      red: ["Девяткино", "Гражданский проспект", "Академическая", "Политехническая", "Площадь Мужества", "Лесная", "Выборгская", "Площадь Ленина", "Чернышевская", "Площадь Восстания", "Владимирская", "Технологический институт", "Балтийская", "Нарвская", "Кировский завод", "Автово", "Ленинский проспект", "Проспект Ветеранов"],
-      blue: ["Парнас", "Проспект Просвещения", "Озерки", "Удельная", "Пионерская", "Чёрная речка", "Петроградская", "Горьковская", "Невский проспект", "Сенная площадь", "Технологический институт", "Фрунзенская", "Московские ворота", "Электросила", "Парк Победы", "Московская", "Звёздная", "Купчино"],
-      green: ["Беговая", "Зенит", "Приморская", "Василеостровская", "Гостиный двор", "Маяковская", "Площадь Александра Невского", "Елизаровская", "Ломоносовская", "Пролетарская", "Обухово", "Рыбацкое"],
-      purple: ["Комендантский проспект", "Старая деревня", "Крестовский остров", "Чкаловская", "Спортивная", "Адмиралтейская", "Садовая", "Звенигородская", "Обводный канал", "Волковская", "Бухарестская", "Международная", "Проспект Славы", "Дунайская", "Шушары"],
-      yellow: ["Спасская", "Достоевская", "Лиговский проспект", "Новочеркасская", "Ладожская", "Проспект Большевиков", "Улица Дыбенко"]
-    };
+    ymaps.ready(function () {
+      try {
+        // Проверяем поддержку метро API
+        if (!ymaps.metro) {
+          console.error('Метро API не доступно');
+          return;
+        }
 
-    const lineSelect = document.getElementById("lineSelect");
-    const stationSelect = document.getElementById("stationSelect");
-    const input = document.getElementById("stationInput");
-
-    lineSelect.addEventListener("change", () => {
-      const line = lineSelect.value;
-      stationSelect.innerHTML = "";
-      input.value = "";
-
-      if (line && lines[line]) {
-        stationSelect.disabled = false;
-        lines[line].forEach(st => {
-          const option = document.createElement("option");
-          option.value = st;
-          option.textContent = st;
-          stationSelect.appendChild(option);
+        // Инициализация карты метро
+        var metroMap = new ymaps.metro.Map('metro-map', {
+          city: 'Санкт-Петербург',
+          schemeId: 'sc60983525',
+          zoom: 10
         });
-      } else {
-        stationSelect.disabled = true;
-        const option = document.createElement("option");
-        option.textContent = "-- Сначала выберите линию --";
-        stationSelect.appendChild(option);
-      }
-    });
 
-    stationSelect.addEventListener("change", () => {
-      input.value = stationSelect.value;
+        var stationInput = document.getElementById('metro-station-input');
+
+        // Обработчик клика по станции
+        metroMap.events.add('click', function (e) {
+          try {
+            var target = e.get('target');
+
+            if (target && target.properties) {
+              var balloonContent = target.properties.get('balloonContent');
+
+              if (balloonContent) {
+                // Извлекаем чистое название станции
+                var stationName = balloonContent
+                  .replace(/<[^>]*>/g, '') // Убираем HTML теги
+                  .replace(/&nbsp;/g, ' ') // Заменяем неразрывные пробелы
+                  .trim();
+
+                stationInput.value = stationName;
+
+                console.log('Выбрана станция:', stationName);
+              }
+            }
+          } catch (error) {
+            console.error('Ошибка при выборе станции:', error);
+          }
+        });
+
+        // Дополнительные события
+        metroMap.events.add('load', function () {
+          console.log('Карта метро загружена');
+        });
+
+      } catch (error) {
+        console.error('Ошибка инициализации карты метро:', error);
+      }
     });
   </script>
 </body>

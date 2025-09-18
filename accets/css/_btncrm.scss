@@ -129,7 +129,42 @@
     &:hover {
       cursor: pointer;
       box-shadow: 0 4px 6px 0 rgba(34, 97, 100, 0.29);
-      background: $color
+      background: $color;
+      transition: $transition;
     }
+  }
+}
+
+
+.btn-defoult {
+  box-shadow: 0 4px 4px 0 rgba(198, 199, 193, 0.4);
+  background: #2b7;
+  border-radius: $borderRadius;
+  color: $white;
+
+  &:is(:hover, :focus) {
+    outline: 1px solid #1bea8e;
+    /* цвет рамки можно поменять */
+    outline-offset: 3px;
+    transition: $transition;
+    background: #2b7;
+    color: $white;
+  }
+}
+
+
+.btn-send {
+  box-shadow: 0 4px 4px 0 rgba(198, 199, 193, 0.4);
+  background: #2b7;
+  border-radius: $borderRadius;
+  color: $white;
+
+  &:is(:hover, :focus) {
+    outline: 1px solid #1bea8e;
+    /* цвет рамки можно поменять */
+    outline-offset: 3px;
+    transition: $transition;
+    background: #2b7;
+    color: $white;
   }
 }

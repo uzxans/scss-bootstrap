@@ -1,0 +1,98 @@
+ //staus_bg
+ .status_new {
+   box-shadow: -4px 4px 4px 0 rgba(27, 234, 142, 0.19);
+   background: #1bea8e;
+
+   &:is(:hover, :focus) {
+     outline: 1px solid #1bea8e;
+     /* цвет рамки можно поменять */
+     outline-offset: 3px;
+     transition: $transition;
+   }
+ }
+
+ .status_work {
+   box-shadow: -4px 4px 4px 0 rgba(214, 229, 131, 0.37);
+   background: #a0e83b;
+
+   &:is(:hover, :focus) {
+     outline: 1px solid #a0e83b;
+     /* цвет рамки можно поменять */
+     outline-offset: 3px;
+     transition: $transition;
+   }
+ }
+
+
+ .status_refusal {
+   box-shadow: -4px 4px 4px 0 rgba(214, 229, 131, 0.37);
+   background: #d9e785;
+
+   &:is(:hover, :focus) {
+     outline: 1px solid #d9e785;
+     /* цвет рамки можно поменять */
+     outline-offset: 3px;
+     transition: $transition;
+   }
+ }
+
+ .status_rezerv {
+   box-shadow: -4px 4px 4px 0 rgba(191, 197, 158, 0.31);
+   background: #bfc59e;
+
+   &:is(:hover, :focus) {
+     outline: 1px solid #bfc59e;
+     /* цвет рамки можно поменять */
+     outline-offset: 3px;
+     transition: $transition;
+   }
+ }
+
+
+ .status_remind {
+   background: #1f9b60;
+   box-shadow: -4px 4px 4px 0 rgba(31, 155, 96, 0.25);
+
+   &:is(:hover, :focus) {
+     outline: 1px solid #1f9b60;
+     /* цвет рамки можно поменять */
+     outline-offset: 3px;
+     transition: $transition;
+   }
+ }
+
+ .status_fired {
+   box-shadow: -4px 4px 4px 0 rgba(197, 158, 158, 0.31);
+   background: #839034;
+
+   &:is(:hover, :focus) {
+     outline: 1px solid #839034;
+     /* цвет рамки можно поменять */
+     outline-offset: 3px;
+     transition: $transition;
+   }
+ }
+
+ .status_blacklist {
+   box-shadow: -4px 4px 4px 0 rgba(197, 158, 158, 0.31);
+   background: #565944;
+
+   &:is(:hover, :focus) {
+     outline: 1px solid #565944;
+     /* цвет рамки можно поменять */
+     outline-offset: 3px;
+     transition: $transition;
+   }
+ }
+
+ .status_didnotcall {
+   box-shadow: -4px 4px 4px 0 rgba(197, 158, 158, 0.31);
+   background: #cecfca;
+
+   &:is(:hover, :focus) {
+     outline: 1px solid #cecfca;
+     /* цвет рамки можно поменять */
+     outline-offset: 3px;
+     transition: $transition;
+   }
+ }
