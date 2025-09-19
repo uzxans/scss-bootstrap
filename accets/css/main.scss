@@ -117,6 +117,10 @@ body {
   @include _480 {
     margin-bottom: 4rem;
   }
+
+  @include _425 {
+    padding: 1rem .5rem;
+  }
 }
 
 .sidebar {
@@ -496,6 +500,10 @@ body {
       top: 0;
     }
 
+    @include _768 {
+      justify-content: center;
+    }
+
     @include _480 {
       position: relative;
     }
@@ -521,6 +529,10 @@ body {
 
     @include _1024 {
       margin-top: 1rem;
+    }
+
+    @include _480 {
+      padding: 0.5rem .2rem;
     }
 
     &::-webkit-scrollbar {
@@ -556,7 +568,7 @@ body {
     display: flex;
     position: sticky;
     top: 1%;
-    z-index: 9999;
+    z-index: 9;
   }
 }
 
@@ -613,19 +625,29 @@ body {
   background-color: $white;
   border-radius: 34px;
 
+  @include _525 {
+    padding: .8rem 1.5rem;
+  }
+
+  @include _480 {
+    display: none;
+  }
+
   p {
     margin-bottom: 0;
     font-weight: 500;
     font-size: 24px;
     letter-spacing: 0.03em;
+
+    @include _768 {
+      display: none;
+    }
   }
 }
 
 .filter {
   position: relative;
   width: 100%;
-
-
 
   .filter-input {
     display: flex;
@@ -710,6 +732,10 @@ body {
         letter-spacing: 0.02em;
         color: #596059;
 
+        @include _768 {
+          font-size: .9rem;
+        }
+
         &.active {
           background-color: #DFF1E9;
         }
@@ -722,6 +748,12 @@ body {
       background-color: $white;
       max-height: 400px;
 
+      @include _768 {
+        min-height: 400px;
+        overflow: hidden;
+        overflow-y: scroll;
+      }
+
       &.active {
         display: block;
       }
@@ -733,6 +765,14 @@ body {
         color: $white;
       }
     }
+
+    .btn_filter_null {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      grid-gap: .8rem;
+    }
   }
 
   .dropdown.open {
@@ -742,6 +782,10 @@ body {
     max-height: 400px;
     max-width: 825px;
     border-radius: 16px;
+
+    @include _768 {
+      max-height: 800px;
+    }
 
     #status {
       .title_tab_content {
@@ -765,61 +809,214 @@ body {
         display: flex;
         flex-wrap: wrap;
         grid-gap: 1rem;
+        margin-bottom: 3rem;
+
+        @include _979 {
+          margin-bottom: 5rem;
+        }
+
+        @include _850 {
+          margin-bottom: 3rem;
+        }
+
+        @include _768 {
+          margin-bottom: 1rem;
+        }
       }
 
     }
   }
 }
 
+.my-tisket_btn_box {
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  @include _480 {
+    margin-bottom: 1rem;
+  }
+
+
+  .my-tisket_btn {
+    @include _525 {
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    @include _480 {
+      justify-content: flex-start;
+      gap: 2rem;
+    }
+
+    .btn_srm {
+      img {
+        display: none;
+      }
+
+      @include _480 {
+        font-size: 1rem;
+        flex-direction: column-reverse;
+        background: $white;
+        border-radius: 21px;
+        width: 70px;
+        height: 40px;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        //border: 1px solid $color;
+        //box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        box-shadow: #22bb772b 6px 2px 16px 0px,
+          rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+
+        span {
+          display: none;
+        }
+
+        img {
+          display: block;
+          width: 22px;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+
+  }
+
+  //btn-check
+  .btn-check-box {
+    @include _768 {
+      display: none;
+    }
+  }
+
+
+  //Mobile-filter
+  .btn_mob_filter {
+    display: none;
+    margin-bottom: 1rem;
+
+    @include _480 {
+      display: block;
+    }
+
+    .offcanvas-start {
+      width: 100vw;
+    }
+
+    .offcanvas-body {
+      .tab-content {
+        margin-bottom: .7rem;
+        background: #ffffff;
+        padding: 10px;
+        border-radius: 8px;
+
+
+        .title_tab_content {
+          margin-bottom: 0.5rem;
+        }
+
+        .option_box {
+          display: flex;
+          flex-wrap: wrap;
+          grid-gap: .6rem;
+
+          .option {
+            color: $white;
+            padding: 0.2rem;
+            border-radius: $borderRadius;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 
 //kanban
 .board-container {
   position: relative;
-  display: flex;
-  align-items: center;
   width: 100%;
+  overflow: hidden;
 
+  @include _768 {
+    display: none;
+  }
 
-  .scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid #ddd;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 10;
+  .scroll-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Firefox */
   }
 
-  .left-btn {
-    left: 10px;
+  .scroll-wrapper::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
   }
 
-  .right-btn {
-    right: 10px;
+  .scroll-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Firefox */
   }
 
-  &:hover .scroll-btn {
+  .scroll-wrapper::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+  }
+
+  /* Зоны автоскролла */
+  .auto-scroll-zone {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 20;
+  }
+
+  .auto-scroll-zone.left {
+    left: 0;
+  }
+
+  .auto-scroll-zone.right {
+    right: 0;
+  }
+
+  /* Визуальные подсказки */
+  .scroll-indicator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 15;
+  }
+
+  .scroll-indicator.left {
+    left: 0;
+    background: linear-gradient(to right, rgba(34, 187, 118, 0.2), transparent);
+  }
+
+  .scroll-indicator.right {
+    right: 0;
+    background: linear-gradient(to left, rgba(34, 187, 118, 0.2), transparent);
+  }
+
+  .scroll-indicator.active {
     opacity: 1;
-    visibility: visible;
+    cursor: wait;
   }
 
-  .scroll-btn:hover {
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transform: translateY(-50%) scale(1.05);
-  }
 }
+
 
 .board {
   display: flex;
@@ -833,6 +1030,7 @@ body {
 
   .column {
     flex: 1 0 332px;
+    max-width: 27%;
     padding-bottom: .5rem;
     border-left: 1px solid rgba(89, 96, 89, 0.23);
     border-top-left-radius: 1rem;
@@ -869,7 +1067,7 @@ body {
     }
 
     .cards {
-      min-height: 200px;
+      max-width: 100%;
     }
   }
 
@@ -930,6 +1128,15 @@ body {
   grid-gap: 1rem;
   margin-bottom: 1rem;
 
+  @include _768 {
+    display: flex;
+    grid-gap: 1.5rem;
+  }
+
+  @include _480 {
+    grid-gap: 1rem;
+  }
+
   .list_user_item {
     position: relative;
     flex: 1 0 250px;
@@ -943,6 +1150,29 @@ body {
       box-shadow: 5px 4px 4px 0 rgba(0, 0, 0, 0.17);
     }
 
+    @include _600 {
+      flex: 1 0 220px;
+    }
+
+    @include _525 {
+      padding: .8rem;
+      flex: 1 0 200px;
+    }
+
+    @include _480 {
+      padding: .5rem;
+      padding-top: 1rem;
+      flex: 1 0 180px;
+    }
+
+    @include _450 {
+      flex: 1 0 160px;
+    }
+
+    @include _425 {
+      padding-top: 1.5rem;
+    }
+
     .status {
       position: absolute;
       border-radius: $borderRadius;
@@ -950,6 +1180,10 @@ body {
       top: -3%;
       right: -1%;
       padding: 0 .3rem;
+
+      @include _425 {
+        font-size: .8rem;
+      }
     }
 
     .name {
@@ -960,6 +1194,14 @@ body {
         font-weight: 600;
         letter-spacing: 0.05em;
         color: #596059;
+
+        @include _480 {
+          font-size: 1rem;
+
+          .flag {
+            font-size: .6rem;
+          }
+        }
       }
     }
 
@@ -970,6 +1212,27 @@ body {
         grid-gap: .8rem;
         grid-template-columns: 25px 1fr;
         margin-bottom: .8rem;
+
+        @include _525 {
+          grid-template-columns: 25px 1fr;
+          margin-bottom: .4rem;
+        }
+
+        @include _480 {
+          grid-template-columns: 20px 1fr;
+          grid-gap: .4rem;
+          font-size: 1rem;
+
+          img {
+            max-width: 80%;
+          }
+        }
+
+        @include _425 {
+          font-size: .8rem;
+          margin-bottom: 0.2rem;
+        }
+
       }
     }
 

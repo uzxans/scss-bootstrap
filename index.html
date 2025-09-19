@@ -137,14 +137,11 @@
                   <div class="option status_blacklist" data-value="Черный список">Черный список</div>
                   <div class="option status_didnotcall" data-value="Не дозвон">Не дозвон</div>
                 </div>
-                <div class="position-absolute  bottom-0 end-0">
-                  <div class="row mb-3">
-                    <div class="col-md-4"><button class="btn btn-defoult">Сохранить</button></div>
-                    <div class="col-md-4"><button class="btn btn-defoult">Сбросить</button></div>
-                    <div class="col-md-4"><button class="closeFilter btn btn-defoult">Закрыть</button></div>
-                  </div>
+                <div class="btn_filter_null">
+                  <button class="btn btn-defoult">Сохранить</button>
+                  <button class="btn btn-defoult">Сбросить</button>
+                  <button class="closeFilter btn btn-defoult">Закрыть</button>
                 </div>
-
               </div>
 
 
@@ -194,12 +191,92 @@
         <!-- End filtrs -->
 
 
-        <div class="d-flex justify-content-between g-3 align-content-center mb-5">
-          <div class="mb-2 d-flex">
-            <button class="btn_srm">Мои заявки<i class="icon-big-application"></i></button>
-            <button class="btn_srm">Экспорт в Excel</button>
+        <div class="d-flex my-tisket_btn_box">
+          <div class="mb-2 d-flex my-tisket_btn">
+
+            <!--Mobile Filter-->
+            <div class="btn_mob_filter">
+              <button class="btn_srm" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                <img src="./accets/fonts/icon/filter-mob.svg" alt="">
+              </button>
+
+              <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Настройка фильтра</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div class="tab-content" id="status">
+                    <div class="title_tab_content">Статус для отбора</div>
+                    <div class="option_box">
+                      <div class="option status_work" data-value="Все">Все</div>
+                      <div class="option status_fired" data-value="1">Соискатель</div>
+                      <div class="option status_work" data-value="100">Работает</div>
+                      <div class="option status_refusal" data-value="Отказ">Отказ</div>
+                      <div class="option status_rezerv" data-value="Резерв">Резерв</div>
+                      <div class="option status_remind" data-value="Напомнить">Напомнить</div>
+                      <div class="option status_fired" data-value="Уволен">Уволен</div>
+                      <div class="option status_blacklist" data-value="Черный список">Черный список</div>
+                      <div class="option status_didnotcall" data-value="Не дозвон">Не дозвон</div>
+                    </div>
+                  </div>
+
+                  <div class="tab-content" id="object">
+                    <div class="title_tab_content">Выбор объекта</div>
+                    <select class="form-select my-3" aria-label="Default select example">
+                      <option selected>Выбрать</option>
+                      <option class="option" data-value="Обухова">Обухова</option>
+                      <option class="option" data-value="ПМП">ПМП</option>
+                    </select>
+                  </div>
+
+                  <!--Data-->
+                  <div class="tab-content" id="date">
+                    <div class="title_tab_content">Выбор даты</div>
+                    <input class="form-control flatpickr-input active my-3" id="daterange" type="text"
+                      readonly="readonly">
+                  </div>
+
+                  <!--Hr-->
+                  <div class="tab-content" id="hr">
+                    <div class="title_tab_content">Выбор HR</div>
+                    <select class="form-select my-3" aria-label="Default select example">
+                      <option selected>Выбрать</option>
+                      <option data-value="Виетоия">Виктория</option>
+                      <option data-value="Руслан">Руслан</option>
+                    </select>
+                  </div>
+
+                  <!--metro-->
+                  <div class="tab-content" id="metro">
+                    <div class="title_tab_content">Выбрать станцию</div>
+                    <input class="form-control my-3" type="text" data-value="" placeholder="Поиск в ручную">
+                    <div class="title_tab_content">Найти станцию на карте</div>
+                    <img src="" alt="">
+                  </div>
+
+
+                  <!--FIO-->
+                  <div class="tab-content name" id="name">
+                    <div class="title_tab_content">Поиск ФИО</div>
+                    <input class="form-control" type="text" data-value="" data-text="">
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <!--End-Mobile Filter-->
+
+            <button class="btn_srm"><span>Мои заявки</span>
+              <img src="./accets/fonts/icon/my-tiket-mob.svg" alt="">
+            </button>
+            <button class="btn_srm"><span>Экспорт в Excel</span> <img src="./accets/fonts/icon/export-exel.svg" alt="">
+            </button>
           </div>
-          <div class="mb-2">
+          <div class="mb-2 btn-check-box">
             <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" checked>
             <label class="btn" for="option5"><img src="./accets/fonts/icon/kanban.svg" alt=""></label>
 
@@ -294,7 +371,7 @@
 
         <!--User-Kanban-->
         <div class="board-container">
-          <button class="scroll-btn left-btn">←</button>
+
           <div class="board" id="board">
             <div class="column" data-status="100">
               <h3 class="status_work">Работает</h3>
@@ -527,10 +604,15 @@
                 </div>
               </div>
             </div>
-
-
           </div>
-          <button class="scroll-btn right-btn">→</button>
+
+          <!-- Зоны автоскролла -->
+          <div class="auto-scroll-zone left" id="zoneLeft"></div>
+          <div class="auto-scroll-zone right" id="zoneRight"></div>
+
+          <!-- Визуальные подсказки -->
+          <div class="scroll-indicator left" id="indicatorLeft"></div>
+          <div class="scroll-indicator right" id="indicatorRight"></div>
         </div>
 
 
@@ -542,6 +624,7 @@
 
 
 
+  <!--Modal HR INFO-->
   <div class="offcanvas offcanvas-end hr-info" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasRightLabel">Душин Дмитрий Витальевич</h5>
@@ -770,7 +853,7 @@
       </div>
     </div>
   </div>
-
+  <!--END-Modal HR INFO-->
 
 
 
@@ -789,6 +872,38 @@
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
   <script src="/accets/js/main.js"></script>
+
+
+  <script>
+    function loadAppropriateScript() {
+      // Удаляем предыдущие скрипты если они есть
+      const oldScripts = document.querySelectorAll('script[data-device-script]');
+      oldScripts.forEach(script => script.remove());
+
+      // Загружаем новый скрипт
+      const script = document.createElement('script');
+      script.setAttribute('data-device-script', 'true');
+
+      if (window.innerWidth <= 480) {
+        script.src = '/accets/js/mobile-main.js';
+      } else {
+        script.src = '/accets/js/desktop-main.js';
+      }
+
+      document.head.appendChild(script);
+    }
+
+    // Загружаем при старте
+    loadAppropriateScript();
+
+    // Обновляем при изменении размера окна (опционально)
+    window.addEventListener('resize', function () {
+      loadAppropriateScript();
+    });
+  </script>
+
+
+
 </body>
 
 </html>
