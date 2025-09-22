@@ -258,11 +258,18 @@ function renderBoard() {
     card.style.display = visible ? "" : "none";
   });
 
-  // Скрывать колонки без карточек
+  // ИЗМЕНЕНО: Показываем только выбранные статусы или все, если фильтр не активен
   document.querySelectorAll(".column").forEach(col => {
     const colStatus = col.dataset.status || 'unknown';
-    const hasVisible = [...col.querySelectorAll(".card")].some(c => c.style.display !== "none");
-    col.style.display = hasVisible ? "" : "none";
+    
+    // Если фильтр по статусу не активен - показываем все колонки
+    if (activeFilters.status.length === 0) {
+      col.style.display = "";
+    } 
+    // Если фильтр активен - показываем только выбранные статусы
+    else {
+      col.style.display = activeFilters.status.includes(colStatus) ? "" : "none";
+    }
   });
 
 }
@@ -295,7 +302,6 @@ document.querySelectorAll(".column").forEach(col => {
 
 // Стартовый рендер
 renderBoard();
-
 
 
 

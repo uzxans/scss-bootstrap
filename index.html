@@ -95,9 +95,8 @@
         <h1>Управление заявками</h1>
       </div>
       <!-- End header_info -->
-
       <div class="container_crm">
-        <!-- start filtrs -->
+        <!-- Desktop start filtrs -->
         <div class="filter_container mb-5">
           <p>Фильтр</p>
           <div class="filter">
@@ -188,8 +187,7 @@
             </div>
           </div>
         </div>
-        <!-- End filtrs -->
-
+        <!--Desktop End filtrs -->
 
         <div class="d-flex my-tisket_btn_box">
           <div class="mb-2 d-flex my-tisket_btn">
@@ -208,18 +206,20 @@
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
+                  <!-- Контейнер активных фильтров -->
+                  <div class="active-tags" id="activeTags"></div>
+
                   <div class="tab-content" id="status">
                     <div class="title_tab_content">Статус для отбора</div>
                     <div class="option_box">
-                      <div class="option status_work" data-value="Все">Все</div>
                       <div class="option status_fired" data-value="1">Соискатель</div>
                       <div class="option status_work" data-value="100">Работает</div>
-                      <div class="option status_refusal" data-value="Отказ">Отказ</div>
-                      <div class="option status_rezerv" data-value="Резерв">Резерв</div>
-                      <div class="option status_remind" data-value="Напомнить">Напомнить</div>
-                      <div class="option status_fired" data-value="Уволен">Уволен</div>
-                      <div class="option status_blacklist" data-value="Черный список">Черный список</div>
-                      <div class="option status_didnotcall" data-value="Не дозвон">Не дозвон</div>
+                      <div class="option status_refusal" data-value="-1">Отказ</div>
+                      <div class="option status_rezerv" data-value="6">Резерв</div>
+                      <div class="option status_remind" data-value="5">Напомнить</div>
+                      <div class="option status_fired" data-value="10">Уволен</div>
+                      <div class="option status_blacklist" data-value="9">Черный список</div>
+                      <div class="option status_didnotcall" data-value="8">Не дозвон</div>
                     </div>
                   </div>
 
@@ -227,8 +227,8 @@
                     <div class="title_tab_content">Выбор объекта</div>
                     <select class="form-select my-3" aria-label="Default select example">
                       <option selected>Выбрать</option>
-                      <option class="option" data-value="Обухова">Обухова</option>
-                      <option class="option" data-value="ПМП">ПМП</option>
+                      <option class="option" data-value="4">Обухова</option>
+                      <option class="option" data-value="7">ПМП</option>
                     </select>
                   </div>
 
@@ -244,8 +244,8 @@
                     <div class="title_tab_content">Выбор HR</div>
                     <select class="form-select my-3" aria-label="Default select example">
                       <option selected>Выбрать</option>
-                      <option data-value="Виетоия">Виктория</option>
-                      <option data-value="Руслан">Руслан</option>
+                      <option data-value="4">Виктория</option>
+                      <option data-value="3">Руслан</option>
                     </select>
                   </div>
 
@@ -284,8 +284,6 @@
             <label class="btn" for="option6"><img src="./accets/fonts/icon/mob-filter.svg" alt=""></label>
           </div>
         </div>
-
-
         <!-- Mob-card and List -->
         <div class="list_user mobTable">
 
@@ -299,17 +297,17 @@
               <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
               <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
               </li>
-              <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
-              <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+              <li data-object="4"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+              <li data-hr="3"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
                 Timdev</li>
-              <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+              <li data-metro="22"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
             </div>
             <hr class="hr-cart">
             <div data-date="2025-09-20" class="data">2025-09-20</div>
           </div>
 
-          <div class="list_user_item card" data-status="1" data-id="1">
-            <div class="status status_new" data-status="1">Соискатель</div>
+          <div class="list_user_item card" data-status="7" data-id="3">
+            <div class="status status_new" data-status="7">Соискатель</div>
             <div class="name" data-name="Грызун">
               <h5>Грызун1</h5>
               <div class="flag">РФ</div>
@@ -318,48 +316,10 @@
               <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
               <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
               </li>
-              <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
-              <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+              <li data-object="2"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+              <li data-hr="4"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
                 Timdev</li>
-              <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
-            </div>
-            <hr class="hr-cart">
-            <div data-date="2025-09-20" class="data">2025-09-20</div>
-          </div>
-
-          <div class="list_user_item card" data-status="1" data-id="1">
-            <div class="status status_new" data-status="1">Соискатель</div>
-            <div class="name" data-name="Грызун">
-              <h5>Грызун1</h5>
-              <div class="flag">РФ</div>
-            </div>
-            <div class="cart_body">
-              <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
-              <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
-              </li>
-              <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
-              <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
-                Timdev</li>
-              <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
-            </div>
-            <hr class="hr-cart">
-            <div data-date="2025-09-20" class="data">2025-09-20</div>
-          </div>
-
-          <div class="list_user_item card" data-status="1" data-id="1">
-            <div class="status status_new" data-status="1">Соискатель</div>
-            <div class="name" data-name="Грызун">
-              <h5>Грызун1</h5>
-              <div class="flag">РФ</div>
-            </div>
-            <div class="cart_body">
-              <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
-              <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
-              </li>
-              <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
-              <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
-                Timdev</li>
-              <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+              <li data-metro="20"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
             </div>
             <hr class="hr-cart">
             <div data-date="2025-09-20" class="data">2025-09-20</div>
@@ -375,7 +335,260 @@
           <div class="board" id="board">
             <div class="column" data-status="100">
               <h3 class="status_work">Работает</h3>
-              <button class="btn_add_user mb-3">Добавить работника <i class="add-button-icon"></i></button>
+              <button class="btn_add_user mb-3" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRightAddNewUser" aria-controls="offcanvasRightAddNewUser">
+                Добавить работника <i class="add-button-icon"></i>
+              </button>
+              <!--Add hr new user-->
+              <div class="offcanvas offcanvas-end hr-info" tabindex="-1" id="offcanvasRightAddNewUser"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Добавить нового соискателя</h5>
+                  <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body user_info_modal">
+                  <div class="user_info">
+                    <div class="user_info_item">
+                      <div class="status_img">
+                        <div class="img_box">
+                          <img src="./accets/img/hr_info_img.png" alt="">
+                        </div>
+                        <div class="status">
+                          <label for="exampleFormControlInput1" class="form-label">Статус</label>
+                          <select class="form-select status_new" aria-label="Default select example">
+                            <option selected>Соискатель</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="fio">
+                          <label for="exampleFormControlInput2" class="form-label">ФИО</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="info_body">
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Профессия</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Телефон номер</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Гражданство</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Дата рождения</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">ИНН патента</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Дата окончания</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="user_info_item">
+                      <div class="row align-items-center">
+                        <div class="col-sm-5 col-md-4 col-xl-3">
+                          <div class="img_box">
+                            <img src="./accets/img/hr_info_img.png" alt="">
+                          </div>
+                        </div>
+                        <div class="col-sm-7 col-md-8 col-xl-9 d-flex align-items-center gap-1">
+                          <img src="./accets/fonts/icon/hr-icon.svg" alt="hr">
+                          <h6 class="mb-0">Приходько Виктория</h6>
+                          <!-- <div class="edit">
+                                                            <input type="text" class="form-control">
+                                                          </div> -->
+                        </div>
+                      </div>
+                      <div class="info_body">
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Объект</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>ОООПолитПром(ПМП)</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Менеджер объекта</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Адрес</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Метроя</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Автово</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End user info-->
+
+                  <div class="comment_box">
+                    <nav>
+                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                          data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                          aria-selected="true">Комментарий</button>
+                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                          type="button" role="tab" aria-controls="nav-profile"
+                          aria-selected="false">SMS/WhatsApp</button>
+                        <!-- <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                                                          type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                                                        <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled"
+                                                          type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button> -->
+                      </div>
+                    </nav>
+                    <div class="tab-content p-2" id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                        aria-labelledby="nav-home-tab" tabindex="0">
+                        <div class="form position-relative">
+                          <textarea class="form-control new_comment" row="9" name="" id=""></textarea>
+                          <button class="btn btn-send m-2 position-absolute  bottom-0 end-0">Отправить</button>
+                        </div>
+                        <!--Comment loading-->
+                        <ol class="comments_row my-5">
+                          <li class="comment_one">
+                            <div class="comment_name">Приходько Виктория</div>
+                            <div class="comment_body">
+                              <textarea class="text_comment" name="" id=""
+                                row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                              <div class="comment_body_footer">
+                                <div class="btn_box_comment">
+                                  <button class="btn" type="button"><img
+                                      src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                                  <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                      alt=""></button>
+                                </div>
+                                <div class="comment_date">
+                                  <img src="./accets/fonts/icon/calendar.svg" alt="">
+                                  2025-05-14
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="comment_one">
+                            <div class="comment_name">Приходько Виктория</div>
+                            <div class="comment_body">
+                              <textarea class="text_comment" name="" id=""
+                                row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                              <div class="comment_body_footer">
+                                <div class="btn_box_comment">
+                                  <button class="btn" type="button"><img
+                                      src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                                  <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                      alt=""></button>
+                                </div>
+                                <div class="comment_date">
+                                  <img src="./accets/fonts/icon/calendar.svg" alt="">
+                                  2025-05-14
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="comment_one">
+                            <div class="comment_name">Приходько Виктория</div>
+                            <div class="comment_body">
+                              <textarea class="text_comment" name="" id=""
+                                row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                              <div class="comment_body_footer">
+                                <div class="btn_box_comment">
+                                  <button class="btn" type="button"><img
+                                      src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                                  <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                      alt=""></button>
+                                </div>
+                                <div class="comment_date">
+                                  <img src="./accets/fonts/icon/calendar.svg" alt="">
+                                  2025-05-14
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="comment_one">
+                            <div class="comment_name">Приходько Виктория</div>
+                            <div class="comment_body">
+                              <textarea class="text_comment" name="" id=""
+                                row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                              <div class="comment_body_footer">
+                                <div class="btn_box_comment">
+                                  <button class="btn" type="button"><img
+                                      src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                                  <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                      alt=""></button>
+                                </div>
+                                <div class="comment_date">
+                                  <img src="./accets/fonts/icon/calendar.svg" alt="">
+                                  2025-05-14
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="comment_one">
+                            <div class="comment_name">Приходько Виктория</div>
+                            <div class="comment_body">
+                              <textarea class="text_comment" name="" id=""
+                                row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                              <div class="comment_body_footer">
+                                <div class="btn_box_comment">
+                                  <button class="btn" type="button"><img
+                                      src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                                  <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                      alt=""></button>
+                                </div>
+                                <div class="comment_date">
+                                  <img src="./accets/fonts/icon/calendar.svg" alt="">
+                                  2025-05-14
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ol>
+                        <!--End-Comment loading-->
+                      </div>
+                      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                        tabindex="0">...
+                      </div>
+                      <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...
+                                                      </div>
+                                                      <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
+                                                        ...</div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End Add hr new user-->
+
+
+
               <div class="cards">
                 <div class="card" data-status="100" data-id="1" type="button" data-bs-toggle="offcanvas"
                   data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -614,247 +827,260 @@
           <div class="scroll-indicator left" id="indicatorLeft"></div>
           <div class="scroll-indicator right" id="indicatorRight"></div>
         </div>
+        <!--End kanban-->
 
 
+
+
+        <!--Modal HR INFO-->
+        <div class="offcanvas offcanvas-end hr-info" tabindex="-1" id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Душин Дмитрий Витальевич</h5>
+            <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body user_info_modal">
+            <div class="user_info">
+              <div class="user_info_item">
+                <div class="status_img">
+                  <div class="img_box">
+                    <img src="./accets/img/hr_info_img.png" alt="">
+                  </div>
+                  <div class="status">
+                    <label for="exampleFormControlInput1" class="form-label">Статус</label>
+                    <select class="form-select status_new" aria-label="Default select example">
+                      <option selected>Соискатель</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                  <div class="fio">
+                    <label for="exampleFormControlInput2" class="form-label">ФИО</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="info_body">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Профессия</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Телефон номер</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Гражданство</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Дата рождения</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">ИНН патента</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Дата окончания</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                </div>
+              </div>
+
+              <div class="user_info_item">
+                <div class="row align-items-center">
+                  <div class="col-sm-5 col-md-4 col-xl-3">
+                    <div class="img_box">
+                      <img src="./accets/img/hr_info_img.png" alt="">
+                    </div>
+                  </div>
+                  <div class="col-sm-7 col-md-8 col-xl-9 d-flex align-items-center gap-1">
+                    <img src="./accets/fonts/icon/hr-icon.svg" alt="hr">
+                    <h6 class="mb-0">Приходько Виктория</h6>
+                    <!-- <div class="edit">
+                                      <input type="text" class="form-control">
+                                    </div> -->
+                  </div>
+                </div>
+                <div class="info_body">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Объект</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>ОООПолитПром(ПМП)</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Менеджер объекта</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Адрес</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Метроя</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Автово</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--End user info-->
+
+            <div class="comment_box">
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true">Комментарий</button>
+                  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false">SMS/WhatsApp</button>
+                  <!-- <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                                    type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                                  <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled"
+                                    type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button> -->
+                </div>
+              </nav>
+              <div class="tab-content p-2" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                  tabindex="0">
+                  <div class="form position-relative">
+                    <textarea class="form-control new_comment" row="9" name="" id=""></textarea>
+                    <button class="btn btn-send m-2 position-absolute  bottom-0 end-0">Отправить</button>
+                  </div>
+                  <!--Comment loading-->
+                  <ol class="comments_row my-5">
+                    <li class="comment_one">
+                      <div class="comment_name">Приходько Виктория</div>
+                      <div class="comment_body">
+                        <textarea class="text_comment" name="" id=""
+                          row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                        <div class="comment_body_footer">
+                          <div class="btn_box_comment">
+                            <button class="btn" type="button"><img
+                                src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                            <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                alt=""></button>
+                          </div>
+                          <div class="comment_date">
+                            <img src="./accets/fonts/icon/calendar.svg" alt="">
+                            2025-05-14
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="comment_one">
+                      <div class="comment_name">Приходько Виктория</div>
+                      <div class="comment_body">
+                        <textarea class="text_comment" name="" id=""
+                          row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                        <div class="comment_body_footer">
+                          <div class="btn_box_comment">
+                            <button class="btn" type="button"><img
+                                src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                            <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                alt=""></button>
+                          </div>
+                          <div class="comment_date">
+                            <img src="./accets/fonts/icon/calendar.svg" alt="">
+                            2025-05-14
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="comment_one">
+                      <div class="comment_name">Приходько Виктория</div>
+                      <div class="comment_body">
+                        <textarea class="text_comment" name="" id=""
+                          row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                        <div class="comment_body_footer">
+                          <div class="btn_box_comment">
+                            <button class="btn" type="button"><img
+                                src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                            <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                alt=""></button>
+                          </div>
+                          <div class="comment_date">
+                            <img src="./accets/fonts/icon/calendar.svg" alt="">
+                            2025-05-14
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="comment_one">
+                      <div class="comment_name">Приходько Виктория</div>
+                      <div class="comment_body">
+                        <textarea class="text_comment" name="" id=""
+                          row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                        <div class="comment_body_footer">
+                          <div class="btn_box_comment">
+                            <button class="btn" type="button"><img
+                                src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                            <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                alt=""></button>
+                          </div>
+                          <div class="comment_date">
+                            <img src="./accets/fonts/icon/calendar.svg" alt="">
+                            2025-05-14
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="comment_one">
+                      <div class="comment_name">Приходько Виктория</div>
+                      <div class="comment_body">
+                        <textarea class="text_comment" name="" id=""
+                          row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                        <div class="comment_body_footer">
+                          <div class="btn_box_comment">
+                            <button class="btn" type="button"><img
+                                src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                            <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                alt=""></button>
+                          </div>
+                          <div class="comment_date">
+                            <img src="./accets/fonts/icon/calendar.svg" alt="">
+                            2025-05-14
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ol>
+                  <!--End-Comment loading-->
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                  tabindex="0">...
+                </div>
+                <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...
+                                </div>
+                                <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
+                                  ...</div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--END-Modal HR INFO-->
       </div>
       <!-- end container_crm -->
     </div>
     <!-- end main -->
   </div>
-
-
-
-  <!--Modal HR INFO-->
-  <div class="offcanvas offcanvas-end hr-info" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasRightLabel">Душин Дмитрий Витальевич</h5>
-      <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-
-    <div class="offcanvas-body user_info_modal">
-      <div class="user_info">
-        <div class="user_info_item">
-          <div class="status_img">
-            <div class="img_box">
-              <img src="./accets/img/hr_info_img.png" alt="">
-            </div>
-            <div class="status">
-              <label for="exampleFormControlInput1" class="form-label">Статус</label>
-              <select class="form-select status_new" aria-label="Default select example">
-                <option selected>Соискатель</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
-            <div class="fio">
-              <label for="exampleFormControlInput2" class="form-label">ФИО</label>
-              <input type="text" class="form-control">
-            </div>
-          </div>
-          <div class="info_body">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Профессия</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Телефон номер</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Гражданство</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Дата рождения</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">ИНН патента</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Дата окончания</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-          </div>
-        </div>
-
-        <div class="user_info_item">
-          <div class="row align-items-center">
-            <div class="col-md-2">
-              <div class="img_box">
-                <img src="./accets/img/hr_info_img.png" alt="">
-              </div>
-            </div>
-            <div class="col-md-10 d-flex align-items-center gap-1">
-              <img src="./accets/fonts/icon/hr-icon.svg" alt="hr">
-              <h6 class="mb-0">Приходько Виктория</h6>
-              <!-- <div class="edit">
-                <input type="text" class="form-control">
-              </div> -->
-            </div>
-          </div>
-          <div class="info_body">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Объект</label>
-              <select class="form-select" aria-label="Default select example">
-                <option selected>ОООПолитПром(ПМП)</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Менеджер объекта</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Адрес</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Метроя</label>
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Автово</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--End user info-->
-
-      <div class="comment_box">
-        <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-              type="button" role="tab" aria-controls="nav-home" aria-selected="true">Комментарий</button>
-            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-              type="button" role="tab" aria-controls="nav-profile" aria-selected="false">SMS/WhatsApp</button>
-            <!-- <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
-              type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
-            <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled"
-              type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button> -->
-          </div>
-        </nav>
-        <div class="tab-content p-2" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-            tabindex="0">
-            <div class="form position-relative">
-              <textarea class="form-control new_comment" row="9" name="" id=""></textarea>
-              <button class="btn btn-send m-2 position-absolute  bottom-0 end-0">Отправить</button>
-            </div>
-            <!--Comment loading-->
-            <ol class="comments_row my-5">
-              <li class="comment_one">
-                <div class="comment_name">Приходько Виктория</div>
-                <div class="comment_body">
-                  <textarea class="text_comment" name="" id=""
-                    row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
-                  <div class="comment_body_footer">
-                    <div class="btn_box_comment">
-                      <button class="btn" type="button"><img src="./accets/fonts/icon/comment_trashcan-outline.svg"
-                          alt=""></button>
-                      <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg" alt=""></button>
-                    </div>
-                    <div class="comment_date">
-                      <img src="./accets/fonts/icon/calendar.svg" alt="">
-                      2025-05-14
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="comment_one">
-                <div class="comment_name">Приходько Виктория</div>
-                <div class="comment_body">
-                  <textarea class="text_comment" name="" id=""
-                    row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
-                  <div class="comment_body_footer">
-                    <div class="btn_box_comment">
-                      <button class="btn" type="button"><img src="./accets/fonts/icon/comment_trashcan-outline.svg"
-                          alt=""></button>
-                      <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg" alt=""></button>
-                    </div>
-                    <div class="comment_date">
-                      <img src="./accets/fonts/icon/calendar.svg" alt="">
-                      2025-05-14
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="comment_one">
-                <div class="comment_name">Приходько Виктория</div>
-                <div class="comment_body">
-                  <textarea class="text_comment" name="" id=""
-                    row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
-                  <div class="comment_body_footer">
-                    <div class="btn_box_comment">
-                      <button class="btn" type="button"><img src="./accets/fonts/icon/comment_trashcan-outline.svg"
-                          alt=""></button>
-                      <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg" alt=""></button>
-                    </div>
-                    <div class="comment_date">
-                      <img src="./accets/fonts/icon/calendar.svg" alt="">
-                      2025-05-14
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="comment_one">
-                <div class="comment_name">Приходько Виктория</div>
-                <div class="comment_body">
-                  <textarea class="text_comment" name="" id=""
-                    row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
-                  <div class="comment_body_footer">
-                    <div class="btn_box_comment">
-                      <button class="btn" type="button"><img src="./accets/fonts/icon/comment_trashcan-outline.svg"
-                          alt=""></button>
-                      <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg" alt=""></button>
-                    </div>
-                    <div class="comment_date">
-                      <img src="./accets/fonts/icon/calendar.svg" alt="">
-                      2025-05-14
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="comment_one">
-                <div class="comment_name">Приходько Виктория</div>
-                <div class="comment_body">
-                  <textarea class="text_comment" name="" id=""
-                    row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
-                  <div class="comment_body_footer">
-                    <div class="btn_box_comment">
-                      <button class="btn" type="button"><img src="./accets/fonts/icon/comment_trashcan-outline.svg"
-                          alt=""></button>
-                      <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg" alt=""></button>
-                    </div>
-                    <div class="comment_date">
-                      <img src="./accets/fonts/icon/calendar.svg" alt="">
-                      2025-05-14
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ol>
-            <!--End-Comment loading-->
-          </div>
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">...
-          </div>
-          <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...
-          </div>
-          <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
-            ...</div> -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--END-Modal HR INFO-->
-
 
 
 
@@ -868,11 +1094,11 @@
     </ul>
   </div>
 
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
   <script src="/accets/js/main.js"></script>
-
 
   <script>
     function loadAppropriateScript() {

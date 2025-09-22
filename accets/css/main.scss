@@ -568,7 +568,7 @@ body {
     display: flex;
     position: sticky;
     top: 1%;
-    z-index: 9;
+    z-index: 10;
   }
 }
 
@@ -647,7 +647,7 @@ body {
 
 .filter {
   position: relative;
-  width: 100%;
+  width: 90%;
 
   .filter-input {
     display: flex;
@@ -661,7 +661,9 @@ body {
 
     .tags {
       display: flex;
+      flex-wrap: wrap;
       gap: 6px;
+      // overflow-x: scroll;
 
       .tag {
         background: #e0f5e9;
@@ -671,6 +673,7 @@ body {
         align-items: center;
         gap: 10px;
         transition: $transition;
+        white-space: nowrap;
 
         &:hover {
           transform: translateY(-2px);
@@ -906,9 +909,42 @@ body {
     }
 
     .offcanvas-body {
+      .active-tags {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 12px;
+        overflow-x: scroll;
+        align-items: center;
+        flex-direction: row;
+        position: sticky;
+        top: 0;
+        background: $white;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        min-height: 40px;
+      }
+
+      .tag {
+        white-space: nowrap;
+        background: $color;
+        color: #fff;
+        padding: 4px 10px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+
+        span {
+          cursor: pointer;
+          font-weight: bold;
+        }
+      }
+
       .tab-content {
         margin-bottom: .7rem;
-        background: #ffffff;
+        background: $white;
         padding: 10px;
         border-radius: 8px;
 
@@ -922,9 +958,17 @@ body {
           flex-wrap: wrap;
           grid-gap: .6rem;
 
+          .active-filter {
+            background: $color;
+            color: $white;
+            border-radius: 6px;
+            padding: 3px 6px;
+            cursor: pointer;
+          }
+
           .option {
             color: $white;
-            padding: 0.2rem;
+            padding: 0.2rem .4rem;
             border-radius: $borderRadius;
           }
         }
@@ -1139,7 +1183,7 @@ body {
 
   .list_user_item {
     position: relative;
-    flex: 1 0 250px;
+    flex: 0 250px;
     background: $white;
     border-radius: $borderRadius;
     padding: 1rem;

@@ -13099,7 +13099,7 @@ body {
     display: flex;
     position: sticky;
     top: 1%;
-    z-index: 9;
+    z-index: 10;
   }
 }
 
@@ -13170,7 +13170,7 @@ body {
 
 .filter {
   position: relative;
-  width: 100%;
+  width: 90%;
 }
 .filter .filter-input {
   display: flex;
@@ -13184,6 +13184,7 @@ body {
 }
 .filter .filter-input .tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
 }
 .filter .filter-input .tags .tag {
@@ -13194,6 +13195,7 @@ body {
   align-items: center;
   gap: 10px;
   transition: ease-in-out all 0.3s;
+  white-space: nowrap;
 }
 .filter .filter-input .tags .tag:hover {
   transform: translateY(-2px);
@@ -13397,9 +13399,39 @@ body {
 .my-tisket_btn_box .btn_mob_filter .offcanvas-start {
   width: 100vw;
 }
+.my-tisket_btn_box .btn_mob_filter .offcanvas-body .active-tags {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  overflow-x: scroll;
+  align-items: center;
+  flex-direction: row;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  min-height: 40px;
+}
+.my-tisket_btn_box .btn_mob_filter .offcanvas-body .tag {
+  white-space: nowrap;
+  background: #2b7;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+.my-tisket_btn_box .btn_mob_filter .offcanvas-body .tag span {
+  cursor: pointer;
+  font-weight: bold;
+}
 .my-tisket_btn_box .btn_mob_filter .offcanvas-body .tab-content {
   margin-bottom: 0.7rem;
-  background: #ffffff;
+  background: #fff;
   padding: 10px;
   border-radius: 8px;
 }
@@ -13411,9 +13443,16 @@ body {
   flex-wrap: wrap;
   grid-gap: 0.6rem;
 }
+.my-tisket_btn_box .btn_mob_filter .offcanvas-body .tab-content .option_box .active-filter {
+  background: #2b7;
+  color: #fff;
+  border-radius: 6px;
+  padding: 3px 6px;
+  cursor: pointer;
+}
 .my-tisket_btn_box .btn_mob_filter .offcanvas-body .tab-content .option_box .option {
   color: #fff;
-  padding: 0.2rem;
+  padding: 0.2rem 0.4rem;
   border-radius: 21px;
 }
 
@@ -13594,7 +13633,7 @@ body {
 }
 .list_user .list_user_item {
   position: relative;
-  flex: 1 0 250px;
+  flex: 0 250px;
   background: #fff;
   border-radius: 21px;
   padding: 1rem;
