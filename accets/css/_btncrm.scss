@@ -1,12 +1,12 @@
 .btn_srm {
   display: flex;
   align-items: center;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.03em;
   text-align: center;
   color: #fff;
-  background: linear-gradient(180deg, $color 0%, #cfdd80 100%);
+  background: $color;
   border-radius: 21px;
   border: 3px solid $body-bg;
   padding: 0.2rem 1rem;

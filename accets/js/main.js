@@ -10,19 +10,39 @@
 
 
 
-document.addEventListener('click', (e) => {
-  if (e.target.closest('.btn_menu')) {
-    const sidebar = e.target.closest('.sidebar');
-    sidebar.classList.toggle('activeSidebar');
+document.addEventListener('DOMContentLoaded', () => {
+  // Load sidebar states from localStorage
+  const desktopSidebar = document.querySelector('.sidebar');
+  const isDesktopActive = localStorage.getItem('desktopSidebarActive') === 'true';
+  if (isDesktopActive) {
+    desktopSidebar.classList.add('activeSidebar');
   }
-});
 
-
-document.addEventListener('click', (e) => {
-  if (e.target.closest('.btn_menu_mob')) {
-    const sidebar = e.target.closest('.sidebar');
-    sidebar.classList.toggle('sidebar_activ_mob');
+  const mobileSidebar = document.querySelector('.sidebar');
+  const isMobileActive = localStorage.getItem('mobileSidebarActive') === 'true';
+  if (isMobileActive) {
+    mobileSidebar.classList.add('sidebar_activ_mob');
   }
+
+  // Desktop sidebar toggle
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.btn_menu')) {
+      const sidebar = e.target.closest('.sidebar');
+      sidebar.classList.toggle('activeSidebar');
+      // Save state to localStorage
+      localStorage.setItem('desktopSidebarActive', sidebar.classList.contains('activeSidebar'));
+    }
+  });
+
+  // Mobile sidebar toggle
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.btn_menu_mob')) {
+      const sidebar = e.target.closest('.sidebar');
+      sidebar.classList.toggle('sidebar_activ_mob');
+      // Save state to localStorage
+      localStorage.setItem('mobileSidebarActive', sidebar.classList.contains('sidebar_activ_mob'));
+    }
+  });
 });
 
 
@@ -85,3 +105,8 @@ option6.addEventListener("change", function() {
     if (window.innerWidth > 768) toggleMobTable();
 });
 ///END Переключатель карточки 
+
+
+
+
+

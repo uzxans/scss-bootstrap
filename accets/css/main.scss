@@ -124,7 +124,6 @@ body {
 }
 
 .sidebar {
-  transition: all 0.3s ease;
   padding: 1rem;
   padding-left: 1.2rem;
   max-width: 329px;
@@ -135,6 +134,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(0%);
+  /* Hidden by default */
+  transition: transform 0.3s ease-in-out, max-width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  /* Smooth transitions */
+  opacity: 0.8;
+  /* Slightly faded when hidden */
 
   @include _1024 {
     max-width: 100%;
@@ -145,6 +151,16 @@ body {
 
   @include _480 {
     display: none;
+  }
+
+  &.activeSidebar {
+    padding-right: 20px;
+    transform: translateX(-20px);
+    /* Slide in */
+    max-width: 100px;
+    /* Gradual width reduction */
+    opacity: 1;
+    /* Fully opaque when active */
   }
 
   .menu_btn_close_mob {
@@ -304,7 +320,8 @@ body {
 
       .active {
         transition: ease-in-out all 0.3s;
-        background: linear-gradient(178deg, $color 0%, #dae888 100%);
+        background: $color;
+        //background: linear-gradient(172deg, #2b7 30% 0%, #dae888 100%);
         color: $white;
 
         img {
@@ -344,7 +361,7 @@ body {
           }
 
           &:hover {
-            background: linear-gradient(178deg, $color 0%, #dae888 100%);
+            background: linear-gradient(172deg, #2b7 30% 0%, #dae888 100%);
             transition: ease-in-out all 0.3s;
             color: $white;
 
@@ -362,6 +379,11 @@ body {
             @include _480 {
               display: block;
             }
+          }
+
+          i {
+            font-size: 1.5rem;
+            font-weight: 500;
           }
         }
 
@@ -554,6 +576,7 @@ body {
   display: none;
   background-color: $white;
   padding: .7rem .5rem;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 
   justify-content: space-between;
 
@@ -565,7 +588,9 @@ body {
   margin-top: 1rem;
 
   @include _480 {
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     display: flex;
+    align-items: center;
     position: sticky;
     top: 1%;
     z-index: 4;
@@ -576,14 +601,16 @@ body {
 
 .footer_mob {
   display: none;
-  background-color: $white;
-  padding: 1rem 2rem;
+  padding: .5rem 1rem;
   position: fixed;
   bottom: 0;
   z-index: 4;
-  width: 100%;
-  stroke: rgba(205, 205, 205, 0.43);
-  box-shadow: 0 -2px 7px 0 rgba(0, 0, 0, 0.2);
+  width: 96%;
+  margin: 4% 2%;
+  border-radius: $borderRadius;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  // stroke: rgba(205, 205, 205, 0.43);
+  // box-shadow: 0 -2px 7px 0 rgba(0, 0, 0, 0.2);
 
   @include _480 {
     display: block;
@@ -592,24 +619,41 @@ body {
 
   .footer_mob_box {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 0;
     margin: 0;
 
     li {
-      &::marker {
-        content: '';
-      }
+      list-style-type: none;
 
       a {
         text-decoration: none;
         font-size: 1.7rem;
+        color: $color;
 
         img {
           width: 2rem;
           height: 2rem;
         }
+      }
+    }
+
+    .mobile_menu_content {
+      ul {
+        padding: 0;
+
+        li {
+          margin-bottom: 0.8rem;
+
+          a {
+            color: #596059;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          }
+        }
+
       }
     }
   }
@@ -910,6 +954,8 @@ body {
     }
 
     .offcanvas-body {
+      padding-top: 0;
+
       .active-tags {
         display: flex;
         gap: 6px;
@@ -1079,6 +1125,7 @@ body {
     padding-bottom: .5rem;
     border-left: 1px solid rgba(89, 96, 89, 0.23);
     border-top-left-radius: 1rem;
+    position: relative;
 
     h3 {
       font-weight: 700;
@@ -1089,6 +1136,7 @@ body {
       padding: .5rem 1rem;
       margin-bottom: 2rem;
     }
+
 
     .btn_add_user {
       border: 1px solid rgba(197, 203, 196, 0.55);

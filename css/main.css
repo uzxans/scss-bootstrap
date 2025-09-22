@@ -11995,12 +11995,12 @@ textarea.form-control-lg {
 .btn_srm {
   display: flex;
   align-items: center;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.03em;
   text-align: center;
   color: #fff;
-  background: linear-gradient(180deg, #2b7 0%, #cfdd80 100%);
+  background: #2b7;
   border-radius: 21px;
   border: 3px solid #E6ECE5;
   padding: 0.2rem 1rem;
@@ -12723,7 +12723,6 @@ body {
 }
 
 .sidebar {
-  transition: all 0.3s ease;
   padding: 1rem;
   padding-left: 1.2rem;
   max-width: 329px;
@@ -12734,6 +12733,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(0%);
+  /* Hidden by default */
+  transition: transform 0.3s ease-in-out, max-width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  /* Smooth transitions */
+  opacity: 0.8;
+  /* Slightly faded when hidden */
 }
 @media (max-width: 1024px) {
   .sidebar {
@@ -12747,6 +12753,15 @@ body {
   .sidebar {
     display: none;
   }
+}
+.sidebar.activeSidebar {
+  padding-right: 20px;
+  transform: translateX(-20px);
+  /* Slide in */
+  max-width: 100px;
+  /* Gradual width reduction */
+  opacity: 1;
+  /* Fully opaque when active */
 }
 .sidebar .menu_btn_close_mob {
   position: absolute;
@@ -12889,7 +12904,7 @@ body {
 }
 .sidebar .menu ul .active {
   transition: ease-in-out all 0.3s;
-  background: linear-gradient(178deg, #2b7 0%, #dae888 100%);
+  background: #2b7;
   color: #fff;
 }
 .sidebar .menu ul .active img {
@@ -12926,7 +12941,7 @@ body {
   }
 }
 .sidebar .menu ul li a:hover {
-  background: linear-gradient(178deg, #2b7 0%, #dae888 100%);
+  background: linear-gradient(172deg, #2b7 30% 0%, #dae888 100%);
   transition: ease-in-out all 0.3s;
   color: #fff;
 }
@@ -12943,6 +12958,10 @@ body {
   .sidebar .menu ul li a span {
     display: block;
   }
+}
+.sidebar .menu ul li a i {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 .sidebar .menu ul li img {
   transition: filter 0.3s;
@@ -13086,6 +13105,7 @@ body {
   display: none;
   background-color: #fff;
   padding: 0.7rem 0.5rem;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   justify-content: space-between;
   border-radius: 28px;
   fill: #fff;
@@ -13096,7 +13116,9 @@ body {
 }
 @media (max-width: 480px) {
   .header_mob {
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     display: flex;
+    align-items: center;
     position: sticky;
     top: 1%;
     z-index: 4;
@@ -13105,14 +13127,14 @@ body {
 
 .footer_mob {
   display: none;
-  background-color: #fff;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   position: fixed;
   bottom: 0;
   z-index: 4;
-  width: 100%;
-  stroke: rgba(205, 205, 205, 0.43);
-  box-shadow: 0 -2px 7px 0 rgba(0, 0, 0, 0.2);
+  width: 96%;
+  margin: 4% 2%;
+  border-radius: 21px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 @media (max-width: 480px) {
   .footer_mob {
@@ -13121,21 +13143,34 @@ body {
 }
 .footer_mob .footer_mob_box {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 0;
   margin: 0;
 }
-.footer_mob .footer_mob_box li::marker {
-  content: "";
+.footer_mob .footer_mob_box li {
+  list-style-type: none;
 }
 .footer_mob .footer_mob_box li a {
   text-decoration: none;
   font-size: 1.7rem;
+  color: #2b7;
 }
 .footer_mob .footer_mob_box li a img {
   width: 2rem;
   height: 2rem;
+}
+.footer_mob .footer_mob_box .mobile_menu_content ul {
+  padding: 0;
+}
+.footer_mob .footer_mob_box .mobile_menu_content ul li {
+  margin-bottom: 0.8rem;
+}
+.footer_mob .footer_mob_box .mobile_menu_content ul li a {
+  color: #596059;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .filter_container {
@@ -13400,6 +13435,9 @@ body {
 .my-tisket_btn_box .btn_mob_filter .offcanvas-start {
   width: 100vw;
 }
+.my-tisket_btn_box .btn_mob_filter .offcanvas-body {
+  padding-top: 0;
+}
 .my-tisket_btn_box .btn_mob_filter .offcanvas-body .active-tags {
   display: flex;
   gap: 6px;
@@ -13543,6 +13581,7 @@ body {
   padding-bottom: 0.5rem;
   border-left: 1px solid rgba(89, 96, 89, 0.23);
   border-top-left-radius: 1rem;
+  position: relative;
 }
 .board .column h3, .board .column .h3 {
   font-weight: 700;
