@@ -135,12 +135,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.3s ease-in-out;
-  transform: translateX(0%);
-  /* Hidden by default */
-  transition: transform 0.3s ease-in-out, max-width 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  /* Smooth transitions */
-  opacity: 0.8;
-  /* Slightly faded when hidden */
 
   @include _1024 {
     max-width: 100%;
@@ -153,15 +147,6 @@ body {
     display: none;
   }
 
-  &.activeSidebar {
-    padding-right: 20px;
-    transform: translateX(-20px);
-    /* Slide in */
-    max-width: 100px;
-    /* Gradual width reduction */
-    opacity: 1;
-    /* Fully opaque when active */
-  }
 
   .menu_btn_close_mob {
     position: absolute;
@@ -404,6 +389,12 @@ body {
       border-color: #ffffff00;
       background-color: #ffffff00;
 
+      i {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #E6ECE5;
+      }
+
 
       &:hover {
         .alertcrm {
@@ -413,12 +404,13 @@ body {
           background-color: #46c47a;
           padding: 0.3rem;
           color: $white;
+          box-shadow: -4px 4px 4px 0 rgba(27, 234, 142, 0.19);
         }
       }
 
       .alertcrm {
-        top: 0;
-        left: 20%;
+        top: -2rem;
+        left: 22%;
         position: absolute;
         display: none;
       }
@@ -528,6 +520,15 @@ body {
 
     @include _480 {
       position: relative;
+      display: block;
+      z-index: 0;
+      padding: 0rem 0.2rem;
+    }
+
+    h1 {
+      @include _350 {
+        font-size: 1.3rem;
+      }
     }
 
     .text {
@@ -551,7 +552,9 @@ body {
 
     @include _1024 {
       margin-top: 1rem;
+      min-height: 80vh;
     }
+
 
     @include _480 {
       padding: 0.5rem .2rem;
@@ -614,6 +617,7 @@ body {
 
   @include _480 {
     display: block;
+    background: $white;
   }
 
 
@@ -694,6 +698,10 @@ body {
   position: relative;
   width: 90%;
 
+  @include _768 {
+    width: 100%;
+  }
+
   .filter-input {
     display: flex;
     flex-wrap: wrap;
@@ -729,6 +737,10 @@ body {
           cursor: pointer;
           font-weight: bold;
           font-size: 20px;
+
+          &::before {
+            content: '';
+          }
         }
       }
     }
@@ -1127,6 +1139,10 @@ body {
     border-top-left-radius: 1rem;
     position: relative;
 
+    overflow-y: auto;
+    /* разрешаем скролл внутри колонки */
+    max-height: calc(100vh - 100px);
+
     h3 {
       font-weight: 700;
       font-size: 18px;
@@ -1135,6 +1151,10 @@ body {
       border-radius: 1rem;
       padding: .5rem 1rem;
       margin-bottom: 2rem;
+
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
 

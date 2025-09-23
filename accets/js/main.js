@@ -9,8 +9,16 @@
 // });
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
+  // Function to check screen size and remove activeSidebar if needed
+  const checkScreenSize = () => {
+    const desktopSidebar = document.querySelector('.sidebar');
+    if (window.innerWidth < 1023 && desktopSidebar.classList.contains('activeSidebar')) {
+      desktopSidebar.classList.remove('activeSidebar');
+      localStorage.setItem('desktopSidebarActive', 'false');
+    }
+  };
+
   // Load sidebar states from localStorage
   const desktopSidebar = document.querySelector('.sidebar');
   const isDesktopActive = localStorage.getItem('desktopSidebarActive') === 'true';
@@ -23,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (isMobileActive) {
     mobileSidebar.classList.add('sidebar_activ_mob');
   }
+
+  // Check screen size on initial load
+  checkScreenSize();
 
   // Desktop sidebar toggle
   document.addEventListener('click', (e) => {
@@ -43,6 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('mobileSidebarActive', sidebar.classList.contains('sidebar_activ_mob'));
     }
   });
+
+  // Listen for window resize events
+  window.addEventListener('resize', checkScreenSize);
 });
 
 
@@ -107,6 +121,13 @@ option6.addEventListener("change", function() {
 ///END Переключатель карточки 
 
 
+// Проверка поддержки sticky
+const testEl = document.createElement('div');
+testEl.style.position = 'sticky';
+console.log('Sticky support:', testEl.style.position === 'sticky');
 
+// Проверка высоты контейнеров
+console.log('Column height:', document.querySelector('.board .column').offsetHeight);
+console.log('Board height:', document.querySelector('.board').offsetHeight);
 
 
