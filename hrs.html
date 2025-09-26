@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> -->
+
+  <!-- Подключаем flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./accets/fonts/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="header_mob container py-2">
+    <img src="./accets/img/logo/logo_mob.svg" alt="" class="logo_img_mob">
+    <a href="/"><img src="./accets/icon/user_mob_prof.svg" alt=""></a>
+  </div>
+
+  <div class="item_container">
+
+    <div class="sidebar">
+      <div class="logo_box">
+        <img src="./accets/img/logo/logo.svg" alt="" class="logo_img">
+        <img src="./accets/img/logo/logo_mob.svg" alt="" class="logo_img_mob">
+      </div>
+      <!-- <button class="btn_menu"><img src="./accets/img/btn_menu.svg" alt=""></button> -->
+      <button class="btn_menu">
+        <div class="icon-container">
+          <!-- Исходный SVG с точками -->
+          <svg class="dots-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 10 16"
+            fill="none">
+            <rect width="4" height="4" rx="2" fill="#22BB77" />
+            <rect x="6" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect y="6" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect x="6" y="6" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect y="12" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect x="6" y="12" width="4" height="4" rx="2" fill="#22BB77" />
+          </svg>
+
+          <!-- SVG со стрелкой (замените на свою стрелку) -->
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+            fill="none">
+            <path d="M15 18L9 12L15 6" stroke="#22BB77" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+      </button>
+
+
+      <!-- <div class="btn_menu_Mob btn btn-primary">
+        <i class="bi bi-list"></i>
+      </div> -->
+      <div class="menu">
+        <ul>
+          <li><a href=""><i class="search-big-icon"></i><span>Поиск</span></a></li>
+          <li><a class="active" href="#"><i class="icon-admin"></i>
+              <span>Администрирование</span></a></li>
+          <li><a href=""><i class="analytics-icon"></i><span>Аналитика</span></a></li>
+          <li><a href="/object.html"><i class="objects-analitic-icon"></i><span>Объекты</span></a></li>
+          <li><a href=""><i class="person4-icon"></i><span>HR</span></a></li>
+          <li><a href=""><i class="icon-big-application-white"></i><span>Мои заявки</span></a></li>
+          <li><a href=""><i class="icon-account"></i><span>Мой аккаунт</span></a></li>
+          <hr>
+          <li><a href=""><i class="video-little-icon"></i><span>Видео встреча</span></a></li>
+          <li><a href=""><i class="icon-knowledge"></i><span>База знаний</span></a></li>
+          <li><a href=""><i class="icon-support"></i><span>Тех. поддержка</span></a></li>
+        </ul>
+      </div>
+      <!-- end menu -->
+
+      <div class="exit_box">
+        <button class="icon_btn">
+          <i class="exit-icon"></i>
+          <span class="alertcrm">Выход из системы</span>
+        </button>
+        <button class="icon_btn">
+          <span class="alertcrm">Переключить тему</span>
+          <i class="sun-icon"></i>
+        </button>
+      </div>
+
+      <button class="btn btn-primary menu_btn_close_mob"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <!-- end sidebar -->
+
+    <div class="main">
+
+      <div class="header_info">
+        <h1>Управление заявками</h1>
+      </div>
+      <!-- End header_info -->
+      <div class="container_crm">
+        <!-- Desktop start filtrs -->
+        <div class="filter_container mb-5">
+          <p>Фильтр</p>
+          <div class="filter">
+            <div class="filter-input" id="filterInput">
+              <div class="tags" id="tags"></div>
+              <input type="text" placeholder="Фильтр..." readonly />
+              <button class="toggle" id="toggleBtn">
+                <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M18 18.5469L13.8983 14.4452M13.8983 14.4452C14.5999 13.7436 15.1565 12.9107 15.5362 11.994C15.9159 11.0773 16.1113 10.0948 16.1113 9.10254C16.1113 8.11031 15.9159 7.12781 15.5362 6.21111C15.1565 5.29442 14.5999 4.46149 13.8983 3.75988C13.1967 3.05827 12.3638 2.50172 11.4471 2.12202C10.5304 1.74231 9.54789 1.54687 8.55566 1.54688C7.56344 1.54688 6.58093 1.74231 5.66424 2.12202C4.74754 2.50172 3.91461 3.05827 3.213 3.75988C1.79604 5.17684 1 7.09865 1 9.10254C1 11.1064 1.79604 13.0282 3.213 14.4452C4.62996 15.8622 6.55178 16.6582 8.55566 16.6582C10.5596 16.6582 12.4814 15.8622 13.8983 14.4452Z"
+                    stroke="#596059" stroke-width="1.45354" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="dropdown" id="dropdown">
+              <div class="tabs">
+                <button data-tab="status" class="active">СТАТУС</button>
+                <button data-tab="object">ВЫБОР ОБЪЕКТА</button>
+                <button data-tab="date">ДАТА</button>
+                <button data-tab="hr">HR</button>
+                <button data-tab="metro">МЕТРО</button>
+                <button data-tab="name">ФИО</button>
+
+              </div>
+
+              <div class="tab-content active" id="status">
+                <div class="title_tab_content">Статус для отбора</div>
+                <div class="option_box">
+                  <div class="option status_work" data-value="Все">Все</div>
+                  <div class="option status_fired" data-value="1">Соискатель</div>
+                  <div class="option status_work" data-value="100">Работает</div>
+                  <div class="option status_refusal" data-value="Отказ">Отказ</div>
+                  <div class="option status_rezerv" data-value="Резерв">Резерв</div>
+                  <div class="option status_remind" data-value="Напомнить">Напомнить</div>
+                  <div class="option status_fired" data-value="Уволен">Уволен</div>
+                  <div class="option status_blacklist" data-value="Черный список">Черный список</div>
+                  <div class="option status_didnotcall" data-value="Не дозвон">Не дозвон</div>
+                </div>
+                <div class="btn_filter_null">
+                  <button class="btn btn-defoult">Сохранить</button>
+                  <button class="btn btn-defoult">Сбросить</button>
+                  <button class="closeFilter btn btn-defoult">Закрыть</button>
+                </div>
+              </div>
+
+
+              <!--Object-->
+              <div class="tab-content" id="object">
+                <div class="title_tab_content">Выбор объекта</div>
+                <select class="form-select my-3" aria-label="Default select example">
+                  <option selected>Выбрать</option>
+                  <option class="option" data-value="Обухова">Обухова</option>
+                  <option class="option" data-value="ПМП">ПМП</option>
+                </select>
+              </div>
+
+              <!--Data-->
+              <div class="tab-content" id="date">
+                <div class="title_tab_content">Выбор даты</div>
+                <input class="form-control flatpickr-input active my-3" id="daterange" type="text" readonly="readonly">
+              </div>
+
+              <!--Data-->
+              <div class="tab-content" id="hr">
+                <div class="title_tab_content">Выбор HR</div>
+                <select class="form-select my-3" aria-label="Default select example">
+                  <option selected>Выбрать</option>
+                  <option data-value="Виетоия">Виктория</option>
+                  <option data-value="Руслан">Руслан</option>
+                </select>
+              </div>
+
+              <!--metro-->
+              <div class="tab-content" id="metro">
+                <div class="title_tab_content">Выбрать станцию</div>
+                <input class="form-control my-3" type="text" data-value="" placeholder="Поиск в ручную">
+                <div class="title_tab_content">Найти станцию на карте</div>
+                <img src="" alt="">
+              </div>
+
+
+              <!--FIO-->
+              <div class="tab-content name" id="name">
+                <div class="title_tab_content my-3">Поиск ФИО</div>
+                <input class="form-control" type="text" data-value="" data-text="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Desktop End filtrs -->
+
+        <div class="d-flex my-tisket_btn_box">
+          <div class="mb-2 d-flex my-tisket_btn">
+
+            <!--Mobile Filter-->
+            <div class="btn_mob_filter">
+              <button class="btn_srm" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                <img src="./accets/fonts/icon/filter-mob.svg" alt="">
+              </button>
+
+              <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Настройка фильтра</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <!-- Контейнер активных фильтров -->
+                  <div class="active-tags" id="activeTags"></div>
+
+                  <div class="tab-content" id="status">
+                    <div class="title_tab_content">Статус для отбора</div>
+                    <div class="option_box">
+                      <div class="option status_fired" data-value="1">Соискатель</div>
+                      <div class="option status_work" data-value="100">Работает</div>
+                      <div class="option status_refusal" data-value="-1">Отказ</div>
+                      <div class="option status_rezerv" data-value="6">Резерв</div>
+                      <div class="option status_remind" data-value="5">Напомнить</div>
+                      <div class="option status_fired" data-value="10">Уволен</div>
+                      <div class="option status_blacklist" data-value="9">Черный список</div>
+                      <div class="option status_didnotcall" data-value="8">Не дозвон</div>
+                    </div>
+                  </div>
+
+                  <div class="tab-content" id="object">
+                    <div class="title_tab_content">Выбор объекта</div>
+                    <select class="form-select my-3" aria-label="Default select example">
+                      <option selected>Выбрать</option>
+                      <option class="option" data-value="4">Обухова</option>
+                      <option class="option" data-value="7">ПМП</option>
+                    </select>
+                  </div>
+
+                  <!--Data-->
+                  <div class="tab-content" id="date">
+                    <div class="title_tab_content">Выбор даты</div>
+                    <input class="form-control flatpickr-input active my-3" id="daterange" type="text"
+                      readonly="readonly">
+                  </div>
+
+                  <!--Hr-->
+                  <div class="tab-content" id="hr">
+                    <div class="title_tab_content">Выбор HR</div>
+                    <select class="form-select my-3" aria-label="Default select example">
+                      <option selected>Выбрать</option>
+                      <option data-value="4">Виктория</option>
+                      <option data-value="3">Руслан</option>
+                    </select>
+                  </div>
+
+                  <!--metro-->
+                  <div class="tab-content" id="metro">
+                    <div class="title_tab_content">Выбрать станцию</div>
+                    <input class="form-control my-3" type="text" data-value="" placeholder="Поиск в ручную">
+                    <div class="title_tab_content">Найти станцию на карте</div>
+                    <img src="" alt="">
+                  </div>
+
+
+                  <!--FIO-->
+                  <div class="tab-content name" id="name">
+                    <div class="title_tab_content">Поиск ФИО</div>
+                    <input class="form-control" type="text" data-value="" data-text="">
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <!--End-Mobile Filter-->
+
+            <button class="btn_srm"><span>Мои заявки</span>
+              <img src="./accets/fonts/icon/my-tiket-mob.svg" alt="">
+            </button>
+            <button class="btn_srm"><span>Экспорт в Excel</span> <img src="./accets/fonts/icon/export-exel.svg" alt="">
+            </button>
+          </div>
+          <div class="mb-2 btn-check-box">
+            <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" checked>
+            <label class="btn" for="option5"><img src="./accets/fonts/icon/kanban.svg" alt=""></label>
+
+            <input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off">
+            <label class="btn" for="option6"><img src="./accets/fonts/icon/mob-filter.svg" alt=""></label>
+          </div>
+        </div>
+
+
+        <!-- Mob-card and List -->
+        <div class="list_user mobTable">
+
+          <div class="list_user_item card" data-status="1" data-id="1">
+            <div class="status status_new" data-status="1">Соискатель</div>
+            <div class="name" data-name="Грызун">
+              <h5>Грызун1</h5>
+              <div class="flag">РФ</div>
+            </div>
+            <div class="cart_body">
+              <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+              <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+              </li>
+              <li data-object="4"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+              <li data-hr="3"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                Timdev</li>
+              <li data-metro="22"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+            </div>
+            <hr class="hr-cart">
+            <div data-date="2025-09-20" class="data">2025-09-20</div>
+          </div>
+
+          <div class="list_user_item card" data-status="7" data-id="3">
+            <div class="status status_new" data-status="7">Соискатель</div>
+            <div class="name" data-name="Грызун">
+              <h5>Грызун1</h5>
+              <div class="flag">РФ</div>
+            </div>
+            <div class="cart_body">
+              <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+              <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+              </li>
+              <li data-object="2"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+              <li data-hr="4"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                Timdev</li>
+              <li data-metro="20"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+            </div>
+            <hr class="hr-cart">
+            <div data-date="2025-09-20" class="data">2025-09-20</div>
+          </div>
+
+        </div>
+        <!-- End Mob-card and List -->
+
+
+        <!--User-Kanban-->
+        <div class="board-container">
+
+          <div class="board" id="board">
+            <div class="column" data-status="100">
+              <h3 class="status_box status_work">Работает</h3>
+              <button class="btn_add_user mb-3" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRightAddNewUser" aria-controls="offcanvasRightAddNewUser">
+                Добавить работника <i class="add-button-icon"></i>
+              </button>
+              <!--Add hr new user-->
+              <div class="offcanvas offcanvas-end hr-info" tabindex="-1" id="offcanvasRightAddNewUser"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Добавить нового соискателя</h5>
+                  <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body user_info_modal">
+                  <div class="user_info">
+                    <div class="user_info_item">
+                      <div class="status_img">
+                        <div class="img_box">
+                          <img src="./accets/img/hr_info_img.png" alt="">
+                        </div>
+                        <div class="status">
+                          <label for="exampleFormControlInput1" class="form-label">Статус</label>
+                          <select class="form-select status_new" aria-label="Default select example">
+                            <option selected>Соискатель</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="fio">
+                          <label for="exampleFormControlInput2" class="form-label">ФИО</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="info_body">
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Профессия</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Телефон номер</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Гражданство</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Дата рождения</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">ИНН патента</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Дата окончания</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="user_info_item">
+                      <div class="row align-items-center">
+                        <div class="col-sm-5 col-md-4 col-xl-3">
+                          <div class="img_box">
+                            <img src="./accets/img/hr_info_img.png" alt="">
+                          </div>
+                        </div>
+                        <div class="col-sm-7 col-md-8 col-xl-9 d-flex align-items-center gap-1">
+                          <img src="./accets/fonts/icon/hr-icon.svg" alt="hr">
+                          <h6 class="mb-0">Приходько Виктория</h6>
+                          <!-- <div class="edit">
+                                                            <input type="text" class="form-control">
+                                                          </div> -->
+                        </div>
+                      </div>
+                      <div class="info_body">
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Объект</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>ОООПолитПром(ПМП)</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Менеджер объекта</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Адрес</label>
+                          <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Метроя</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Автово</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--End user info-->
+
+                  <div class="comment_box">
+                    <nav>
+                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                          data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                          aria-selected="true">Комментарий</button>
+                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                          type="button" role="tab" aria-controls="nav-profile"
+                          aria-selected="false">SMS/WhatsApp</button>
+                        <!-- <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                                                          type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                                                        <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled"
+                                                          type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button> -->
+                      </div>
+                    </nav>
+                    <div class="tab-content p-2" id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                        aria-labelledby="nav-home-tab" tabindex="0">
+                        <div class="form position-relative">
+                          <textarea class="form-control new_comment" row="9" name="" id=""></textarea>
+                          <button class="btn btn-send m-2 position-absolute  bottom-0 end-0">Отправить</button>
+                        </div>
+                        <!--Comment loading-->
+                        <ol class="comments_row my-5">
+                          <li class="comment_one">
+                            <div class="comment_name">Приходько Виктория</div>
+                            <div class="comment_body">
+                              <textarea class="text_comment" name="" id=""
+                                row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                              <div class="comment_body_footer">
+                                <div class="btn_box_comment">
+                                  <button class="btn" type="button"><img
+                                      src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                                  <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                      alt=""></button>
+                                </div>
+                                <div class="comment_date">
+                                  <img src="./accets/fonts/icon/calendar.svg" alt="">
+                                  2025-05-14
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="comment_one">
+                            <div class="comment_name">Приходько Виктория</div>
+                            <div class="comment_body">
+                              <textarea class="text_comment" name="" id=""
+                                row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                              <div class="comment_body_footer">
+                                <div class="btn_box_comment">
+                                  <button class="btn" type="button"><img
+                                      src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                                  <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                      alt=""></button>
+                                </div>
+                                <div class="comment_date">
+                                  <img src="./accets/fonts/icon/calendar.svg" alt="">
+                                  2025-05-14
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="comment_one">
+                            <div class="comment_name">Приходько Виктория</div>
+                            <div class="comment_body">
+                              <textarea class="text_comment" name="" id=""
+                                row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                              <div class="comment_body_footer">
+                                <div class="btn_box_comment">
+                                  <button class="btn" type="button"><img
+                                      src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                                  <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                      alt=""></button>
+                                </div>
+                                <div class="comment_date">
+                                  <img src="./accets/fonts/icon/calendar.svg" alt="">
+                                  2025-05-14
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="comment_one">
+                            <div class="comment_name">Приходько Виктория</div>
+                            <div class="comment_body">
+                              <textarea class="text_comment" name="" id=""
+                                row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                              <div class="comment_body_footer">
+                                <div class="btn_box_comment">
+                                  <button class="btn" type="button"><img
+                                      src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                                  <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                      alt=""></button>
+                                </div>
+                                <div class="comment_date">
+                                  <img src="./accets/fonts/icon/calendar.svg" alt="">
+                                  2025-05-14
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="comment_one">
+                            <div class="comment_name">Приходько Виктория</div>
+                            <div class="comment_body">
+                              <textarea class="text_comment" name="" id=""
+                                row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                              <div class="comment_body_footer">
+                                <div class="btn_box_comment">
+                                  <button class="btn" type="button"><img
+                                      src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                                  <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                      alt=""></button>
+                                </div>
+                                <div class="comment_date">
+                                  <img src="./accets/fonts/icon/calendar.svg" alt="">
+                                  2025-05-14
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ol>
+                        <!--End-Comment loading-->
+                      </div>
+                      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                        tabindex="0">...
+                      </div>
+                      <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...
+                                                      </div>
+                                                      <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
+                                                        ...</div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End Add hr new user-->
+
+
+
+              <div class="cards">
+                <div class="card" data-status="100" data-id="1" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+                <div class="card" data-status="100" data-id="1" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+                <div class="card" data-status="100" data-id="1" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+                <div class="card" data-status="100" data-id="1" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+              </div>
+            </div>
+            <div class="column" data-status="1">
+              <h3 class="status_new">Соискатель</h3>
+              <button class="btn_add_user mb-3">Добавить работника <i class="add-button-icon"></i></button>
+              <div class="cards">
+                <div class="card" data-status="100" data-id="1" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+              </div>
+            </div>
+            <div class="column" data-status="7">
+              <h3 class="status_box status_rezerv">Резерв</h3>
+              <button class="btn_add_user mb-3">Добавить работника <i class="add-button-icon"></i></button>
+              <div class="cards">
+                <div class="card" data-status="100" data-id="7" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+              </div>
+            </div>
+            <div class="column" data-status="-100">
+              <h3 class="status_fired">Уволен</h3>
+              <button class="btn_add_user mb-3">Добавить работника <i class="add-button-icon"></i></button>
+              <div class="cards">
+                <div class="card" data-status="-100" data-id="1" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+              </div>
+            </div>
+            <div class="column" data-status="5">
+              <h3 class="status_remind">Напомнить</h3>
+              <button class="btn_add_user mb-3">Добавить работника <i class="add-button-icon"></i></button>
+              <div class="cards">
+                <div class="card" data-status="5" data-id="" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column" data-status="-1">
+              <h3 class="status_refusal">Отказ</h3>
+              <button class="btn_add_user mb-3">Добавить работника <i class="add-button-icon"></i></button>
+              <div class="cards">
+                <div class="card" data-status="-1" data-id="6" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column" data-status="4">
+              <h3 class="status_refusal">Отказ222</h3>
+              <button class="btn_add_user mb-3">Добавить работника <i class="add-button-icon"></i></button>
+              <div class="cards">
+                <div class="card" data-status="4" data-id="7" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+                <div class="card" data-status="4" data-id="7" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+                <div class="card" data-status="4" data-id="7" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column" data-status="4">
+              <h3 class="status_refusal">Отказ4646</h3>
+              <button class="btn_add_user mb-3">Добавить работника <i class="add-button-icon"></i></button>
+              <div class="cards">
+                <div class="card" data-status="4" data-id="7" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <div class="name" data-name="Грызун">
+                    <h3>Грызун1</h3>
+                    <div class="flag">РФ</div>
+                  </div>
+                  <div class="cart_body">
+                    <li><img src="./accets/fonts/icon/data-icon.svg" alt="">Грызун</li>
+                    <li data-phone="89287773050"><img src="./accets/fonts/icon/phone-icon.svg" alt="">8-928-777-30-50
+                    </li>
+                    <li data-object="Обухова"><img src="./accets/fonts/icon/building-icon.svg" alt="">Обухова</li>
+                    <li data-hr="Timdev"><img src="./accets/fonts/icon/hr-icon.svg" alt="">
+                      Timdev</li>
+                    <li data-metro="Звёздная"><img src="./accets/fonts/icon/metro-icon.svg" alt="">Теst</li>
+                  </div>
+                  <hr class="hr-cart">
+                  <div data-date="2025-09-20" class="data">2025-09-20</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Зоны автоскролла -->
+          <div class="auto-scroll-zone left" id="zoneLeft"></div>
+          <div class="auto-scroll-zone right" id="zoneRight"></div>
+
+          <!-- Визуальные подсказки -->
+          <div class="scroll-indicator left" id="indicatorLeft"></div>
+          <div class="scroll-indicator right" id="indicatorRight"></div>
+        </div>
+        <!--End kanban-->
+
+
+
+
+        <!--Modal HR INFO-->
+        <div class="offcanvas offcanvas-end hr-info" tabindex="-1" id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Душин Дмитрий Витальевич</h5>
+            <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body user_info_modal">
+            <div class="user_info">
+              <div class="user_info_item">
+                <div class="status_img">
+                  <div class="img_box">
+                    <img src="./accets/img/hr_info_img.png" alt="">
+                  </div>
+                  <div class="status">
+                    <label for="exampleFormControlInput1" class="form-label">Статус</label>
+                    <select class="form-select status_new" aria-label="Default select example">
+                      <option selected>Соискатель</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                  <div class="fio">
+                    <label for="exampleFormControlInput2" class="form-label">ФИО</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="info_body">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Профессия</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Телефон номер</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Гражданство</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Дата рождения</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">ИНН патента</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Дата окончания</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                </div>
+              </div>
+
+              <div class="user_info_item">
+                <div class="row align-items-center">
+                  <div class="col-sm-5 col-md-4 col-xl-3">
+                    <div class="img_box">
+                      <img src="./accets/img/hr_info_img.png" alt="">
+                    </div>
+                  </div>
+                  <div class="col-sm-7 col-md-8 col-xl-9 d-flex align-items-center gap-1">
+                    <img src="./accets/fonts/icon/hr-icon.svg" alt="hr">
+                    <h6 class="mb-0">Приходько Виктория</h6>
+                    <!-- <div class="edit">
+                                      <input type="text" class="form-control">
+                                    </div> -->
+                  </div>
+                </div>
+                <div class="info_body">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Объект</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>ОООПолитПром(ПМП)</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Менеджер объекта</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Адрес</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                      placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Метроя</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Автово</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--End user info-->
+
+            <div class="comment_box">
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true">Комментарий</button>
+                  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false">SMS/WhatsApp</button>
+                  <!-- <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                                    type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                                  <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled"
+                                    type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button> -->
+                </div>
+              </nav>
+              <div class="tab-content p-2" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                  tabindex="0">
+                  <div class="form position-relative">
+                    <textarea class="form-control new_comment" row="9" name="" id=""></textarea>
+                    <button class="btn btn-send m-2 position-absolute  bottom-0 end-0">Отправить</button>
+                  </div>
+                  <!--Comment loading-->
+                  <ol class="comments_row my-5">
+                    <li class="comment_one">
+                      <div class="comment_name">Приходько Виктория</div>
+                      <div class="comment_body">
+                        <textarea class="text_comment" name="" id=""
+                          row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                        <div class="comment_body_footer">
+                          <div class="btn_box_comment">
+                            <button class="btn" type="button"><img
+                                src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                            <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                alt=""></button>
+                          </div>
+                          <div class="comment_date">
+                            <img src="./accets/fonts/icon/calendar.svg" alt="">
+                            2025-05-14
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="comment_one">
+                      <div class="comment_name">Приходько Виктория</div>
+                      <div class="comment_body">
+                        <textarea class="text_comment" name="" id=""
+                          row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                        <div class="comment_body_footer">
+                          <div class="btn_box_comment">
+                            <button class="btn" type="button"><img
+                                src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                            <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                alt=""></button>
+                          </div>
+                          <div class="comment_date">
+                            <img src="./accets/fonts/icon/calendar.svg" alt="">
+                            2025-05-14
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="comment_one">
+                      <div class="comment_name">Приходько Виктория</div>
+                      <div class="comment_body">
+                        <textarea class="text_comment" name="" id=""
+                          row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                        <div class="comment_body_footer">
+                          <div class="btn_box_comment">
+                            <button class="btn" type="button"><img
+                                src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                            <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                alt=""></button>
+                          </div>
+                          <div class="comment_date">
+                            <img src="./accets/fonts/icon/calendar.svg" alt="">
+                            2025-05-14
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="comment_one">
+                      <div class="comment_name">Приходько Виктория</div>
+                      <div class="comment_body">
+                        <textarea class="text_comment" name="" id=""
+                          row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                        <div class="comment_body_footer">
+                          <div class="btn_box_comment">
+                            <button class="btn" type="button"><img
+                                src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                            <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                alt=""></button>
+                          </div>
+                          <div class="comment_date">
+                            <img src="./accets/fonts/icon/calendar.svg" alt="">
+                            2025-05-14
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="comment_one">
+                      <div class="comment_name">Приходько Виктория</div>
+                      <div class="comment_body">
+                        <textarea class="text_comment" name="" id=""
+                          row="3">запил больше обычного нет 10 дней на смене уволен 14.05.25</textarea>
+                        <div class="comment_body_footer">
+                          <div class="btn_box_comment">
+                            <button class="btn" type="button"><img
+                                src="./accets/fonts/icon/comment_trashcan-outline.svg" alt=""></button>
+                            <button class="btn" type="button"><img src="./accets/fonts/icon/comment_edit.svg"
+                                alt=""></button>
+                          </div>
+                          <div class="comment_date">
+                            <img src="./accets/fonts/icon/calendar.svg" alt="">
+                            2025-05-14
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ol>
+                  <!--End-Comment loading-->
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                  tabindex="0">...
+                </div>
+                <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...
+                                </div>
+                                <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
+                                  ...</div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--END-Modal HR INFO-->
+      </div>
+      <!-- end container_crm -->
+    </div>
+    <!-- end main -->
+  </div>
+
+
+
+
+  <div class="footer_mob">
+    <ul class="footer_mob_box">
+      <li><a href=""><i class="icon-big-application-white"></i></a></li>
+      <li><a href=""><i class="analytics-icon"></i></a></li>
+      <li><a href=""><i class="objects-analitic-icon"></i></a></li>
+      <li><a href=""><i class="person2-icon"></i></a></li>
+      <li><a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightMenuMobile"
+          aria-controls="offcanvasRightMenuMobile"><i class="list-large-icon"></i></a></li>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightMenuMobile"
+        aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">
+            <img src="./accets/img/logo/logo.svg" alt="" class="logo_img">
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="mobile_menu_content">
+            <ul>
+              <li><a class="active" href="#"><i class="icon-admin"></i><span>Администрирование</span></a></li>
+              <li><a href=""><i class="search-big-icon"></i><span>Поиск</span></a></li>
+              <li><a href=""><i class="analytics-icon"></i><span>Аналитика</span></a></li>
+              <li><a href="/object.html"><i class="objects-analitic-icon"></i><span>Объекты</span></a></li>
+              <li><a href=""><i class="person2-icon"></i><span>HR</span></a></li>
+              <li><a href=""><i class="icon-big-application"></i><span>Мои заявки</span></a></li>
+              <li><a href=""><i class="icon-account"></i><span>Мой аккаунт</span></a></li>
+              <hr>
+              <li><a href=""><i class="video-little-icon"></i><span>Видео встреча</span></a></li>
+              <li><a href=""><i class="icon-knowledge"></i><span>База знаний</span></a></li>
+              <li><a href=""><i class="icon-support"></i><span>Тех. поддержка</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </ul>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+  <script src="/accets/js/main.js"></script>
+
+  <script>
+    function loadAppropriateScript() {
+      // Удаляем предыдущие скрипты если они есть
+      const oldScripts = document.querySelectorAll('script[data-device-script]');
+      oldScripts.forEach(script => script.remove());
+
+      // Загружаем новый скрипт
+      const script = document.createElement('script');
+      script.setAttribute('data-device-script', 'true');
+
+      if (window.innerWidth <= 480) {
+        script.src = '/accets/js/mobile-main.js';
+      } else {
+        script.src = '/accets/js/desktop-main.js';
+      }
+
+      document.head.appendChild(script);
+    }
+
+    // Загружаем при старте
+    loadAppropriateScript();
+
+    // Обновляем при изменении размера окна (опционально)
+    window.addEventListener('resize', function () {
+      loadAppropriateScript();
+    });
+  </script>
+
+
+
+</body>
+
+</html>

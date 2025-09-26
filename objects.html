@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-
+  <link rel="stylesheet" href="./accets/fonts/style.css">
   <link rel="stylesheet" href="./css/main.css">
-  <title>Document</title>
+  <title>Objects</title>
 </head>
 
 <body>
@@ -26,8 +26,8 @@
 
     <div class="sidebar">
       <div class="logo_box">
-        <img src="./accets/img/logo.svg" alt="" class="logo_img">
-        <img src="./accets/img/logo_mob.svg" alt="" class="logo_img_mob">
+        <img src="./accets/img/logo/logo.svg" alt="" class="logo_img">
+        <img src="./accets/img/logo/logo_mob.svg" alt="" class="logo_img_mob">
       </div>
       <!-- <button class="btn_menu"><img src="./accets/img/btn_menu.svg" alt=""></button> -->
       <button class="btn_menu">
@@ -54,35 +54,34 @@
 
 
       <!-- <div class="btn_menu_Mob btn btn-primary">
-        <i class="bi bi-list"></i>
-      </div> -->
+                <i class="bi bi-list"></i>
+              </div> -->
       <div class="menu">
         <ul>
-          <li><a href=""><img src="./accets/img/icon/search.svg" alt="search"><span>Поиск</span></a></li>
-          <li><a class="active" href="#"><img src="./accets/img/icon/admin.svg" alt="search">
+          <li><a href=""><i class="search-big-icon"></i><span>Поиск</span></a></li>
+          <li><a class="active" href="#"><i class="icon-admin"></i>
               <span>Администрирование</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/sales.svg" alt="search"><span>Отдел продаж</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/priglasheniya.svg" alt="search"><span>Приглашения</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/analitika.svg" alt="search"><span>Аналитика</span></a></li>
-          <li><a href="/object.html"><img src="./accets/img/icon/obyekt.svg" alt="search"><span>Объекты</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/hr.svg" alt="search"><span>HR</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/zayavki.svg" alt="search"><span>Мои заявки</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/myprofil.svg" alt="search"><span>Мой аккаунт</span></a></li>
+          <li><a href=""><i class="analytics-icon"></i><span>Аналитика</span></a></li>
+          <li><a href="/object.html"><i class="objects-analitic-icon"></i><span>Объекты</span></a></li>
+          <li><a href=""><i class="person4-icon"></i><span>HR</span></a></li>
+          <li><a href=""><i class="icon-big-application-white"></i><span>Мои заявки</span></a></li>
+          <li><a href=""><i class="icon-account"></i><span>Мой аккаунт</span></a></li>
           <hr>
-          <li><a href=""><img src="./accets/img/icon/video.svg" alt="search"><span>Видео встреча</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/bazaznaniy.svg" alt="search"><span>База знаний</span></a></li>
-          <li><a href=""><img src="./accets/img/icon/texpoderjka.svg" alt="search"><span>Тех. поддержка</span></a></li>
+          <li><a href=""><i class="video-little-icon"></i><span>Видео встреча</span></a></li>
+          <li><a href=""><i class="icon-knowledge"></i><span>База знаний</span></a></li>
+          <li><a href=""><i class="icon-support"></i><span>Тех. поддержка</span></a></li>
         </ul>
       </div>
       <!-- end menu -->
 
       <div class="exit_box">
-        <button class="icon_btn"><img src="./accets/img/icon/exit.svg" alt="">
+        <button class="icon_btn">
+          <i class="exit-icon"></i>
           <span class="alertcrm">Выход из системы</span>
         </button>
         <button class="icon_btn">
           <span class="alertcrm">Переключить тему</span>
-          <img src="./accets/img/icon/uil_sun.svg" alt="">
+          <i class="sun-icon"></i>
         </button>
       </div>
 
@@ -104,13 +103,13 @@
             <div class="btn_box">
               <a class="btn_add_object">
                 Архив объектов
-                <img src="./accets/img/icon/object_archive.svg" alt="back">
+                <i class="archiv-icon"></i>
               </a>
             </div>
             <div class="btn_box">
               <a class="btn_add_object">
                 Добавить объект
-                <img src="./accets/img/icon/object_add.svg" alt="back">
+                <i class="add-icon"></i>
               </a>
             </div>
             <div class="select">
@@ -127,7 +126,7 @@
 
           <div class="object_box_filter-item">
             <div class="d-flex">
-              <img src="./accets/img/fluent_person.svg" alt="">
+              <i class="employees-icon icon_obj"></i>
               <h3>Действующие сотрудники</h3>
             </div>
             <div class="object_box_filter-item-footer">
@@ -140,7 +139,7 @@
 
           <div class="object_box_filter-item">
             <div class="d-flex">
-              <img src="./accets/img/ungroup-objects.svg" alt="">
+              <i class="icon-big-objects-white icon_obj"></i>
               <h3>Объеты</h3>
             </div>
             <div class="object_box_filter-item-footer">
@@ -158,11 +157,11 @@
           <div class="objects-item">
             <div class="objects-item_header">
               <h3>OZON</h3>
-              <button><img src="./accets/icon/object/trashcan-outline.svg" alt=""></button>
+              <button><i class="trashcan-outline-icon"></i></button>
             </div>
             <div class="objects-item_body">
-              <p><img src="./accets/icon/object/object_phone.svg" alt="">8-928-000-00-00</p>
-              <p class="location"><img src="./accets/icon/object/location.svg" alt="">Имашейи</p>
+              <p><i class="phone-icon"></i>8-928-000-00-00</p>
+              <p class="location"><i class="local-yellow-icon"></i>Имашейи</p>
               <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0"
                 aria-valuemax="100">
                 <div class="progress-bar" style="width: 25%"></div>
@@ -170,7 +169,7 @@
             </div>
             <div class="objects-item_footer">
               <div class="number_people">
-                <img src="./accets/icon/object/user_add.png" alt="">
+                <i class="person2-icon"></i>
                 <p>+10</p>
               </div>
               <p>timdev</p>
@@ -179,11 +178,11 @@
           <div class="objects-item">
             <div class="objects-item_header">
               <h3>OZON</h3>
-              <button><img src="./accets/icon/object/trashcan-outline.svg" alt=""></button>
+              <button><i class="trashcan-outline-icon"></i></button>
             </div>
             <div class="objects-item_body">
-              <p><img src="./accets/icon/object/object_phone.svg" alt="">8-928-000-00-00</p>
-              <p class="location"><img src="./accets/icon/object/location.svg" alt="">Имашейи</p>
+              <p><i class="phone-icon"></i>8-928-000-00-00</p>
+              <p class="location"><i class="local-yellow-icon"></i>Имашейи</p>
               <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0"
                 aria-valuemax="100">
                 <div class="progress-bar" style="width: 25%"></div>
@@ -191,7 +190,7 @@
             </div>
             <div class="objects-item_footer">
               <div class="number_people">
-                <img src="./accets/icon/object/user_add.png" alt="">
+                <i class="person2-icon"></i>
                 <p>+10</p>
               </div>
               <p>timdev</p>
@@ -200,11 +199,11 @@
           <div class="objects-item">
             <div class="objects-item_header">
               <h3>OZON</h3>
-              <button><img src="./accets/icon/object/trashcan-outline.svg" alt=""></button>
+              <button><i class="trashcan-outline-icon"></i></button>
             </div>
             <div class="objects-item_body">
-              <p><img src="./accets/icon/object/object_phone.svg" alt="">8-928-000-00-00</p>
-              <p class="location"><img src="./accets/icon/object/location.svg" alt="">Имашейи</p>
+              <p><i class="phone-icon"></i>8-928-000-00-00</p>
+              <p class="location"><i class="local-yellow-icon"></i>Имашейи</p>
               <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0"
                 aria-valuemax="100">
                 <div class="progress-bar" style="width: 25%"></div>
@@ -212,49 +211,7 @@
             </div>
             <div class="objects-item_footer">
               <div class="number_people">
-                <img src="./accets/icon/object/user_add.png" alt="">
-                <p>+10</p>
-              </div>
-              <p>timdev</p>
-            </div>
-          </div>
-          <div class="objects-item">
-            <div class="objects-item_header">
-              <h3>OZON</h3>
-              <button><img src="./accets/icon/object/trashcan-outline.svg" alt=""></button>
-            </div>
-            <div class="objects-item_body">
-              <p><img src="./accets/icon/object/object_phone.svg" alt="">8-928-000-00-00</p>
-              <p class="location"><img src="./accets/icon/object/location.svg" alt="">Имашейи</p>
-              <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0"
-                aria-valuemax="100">
-                <div class="progress-bar" style="width: 25%"></div>
-              </div>
-            </div>
-            <div class="objects-item_footer">
-              <div class="number_people">
-                <img src="./accets/icon/object/user_add.png" alt="">
-                <p>+10</p>
-              </div>
-              <p>timdev</p>
-            </div>
-          </div>
-          <div class="objects-item">
-            <div class="objects-item_header">
-              <h3>OZON</h3>
-              <button><img src="./accets/icon/object/trashcan-outline.svg" alt=""></button>
-            </div>
-            <div class="objects-item_body">
-              <p><img src="./accets/icon/object/object_phone.svg" alt="">8-928-000-00-00</p>
-              <p class="location"><img src="./accets/icon/object/location.svg" alt="">Имашейи</p>
-              <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0"
-                aria-valuemax="100">
-                <div class="progress-bar" style="width: 25%"></div>
-              </div>
-            </div>
-            <div class="objects-item_footer">
-              <div class="number_people">
-                <img src="./accets/icon/object/user_add.png" alt="">
+                <i class="person2-icon"></i>
                 <p>+10</p>
               </div>
               <p>timdev</p>

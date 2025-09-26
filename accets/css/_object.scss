@@ -43,13 +43,20 @@
        align-items: center;
        transition: $transition;
 
+       i {
+         font-size: 21px;
+
+         &::before {
+           color: #e6ece5;
+         }
+       }
+
        &:hover {
          transition: $transition;
-         color: $primary;
+         color: $color;
 
-         img {
-           transition: $transition;
-           filter: invert(51%) sepia(86%) saturate(375%) hue-rotate(101deg) brightness(99%) contrast(94%);
+         i {
+           fill: $color;
          }
        }
      }
@@ -254,6 +261,121 @@
    .zametki {
      border-radius: $borderRadius;
    }
+
+   .comments_row {
+     list-style-type: none;
+     counter-reset: num;
+     position: relative;
+     margin: 0 0 0 40px;
+     padding: 15px 0 5px 0;
+
+     &:before {
+       content: '';
+       position: absolute;
+       top: 15px;
+       bottom: 15px;
+       left: -30px;
+       width: 2px;
+       border-left: 2px solid $color;
+     }
+
+     .comment_one {
+       position: relative;
+       margin: 0 0 0 0;
+       padding: 0 0 10px 0;
+       line-height: 1.4;
+       margin-bottom: 1rem;
+
+       &:after {
+         content: '';
+         counter-increment: num;
+         display: inline-block;
+         position: absolute;
+         top: 0;
+         left: -39px;
+         width: 20px;
+         height: 20px;
+         line-height: 20px;
+         background: $color;
+         border-radius: 50%;
+         border: 1px solid $color;
+       }
+
+       &:last-child:before {
+         content: '';
+         display: inline-block;
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: -38px;
+         width: 25px;
+       }
+
+
+       .comment_name {
+         font-weight: 500;
+         font-size: 16px;
+         letter-spacing: 0.03em;
+         color: #596059;
+         margin-bottom: 0.7rem;
+       }
+
+       .comment_body {
+         background: #e6ece540;
+         border-radius: 15px;
+         padding: .5rem .8rem;
+
+         .text_comment {
+           border: 0;
+           width: 100%;
+           min-height: 50px;
+           margin-bottom: 1rem;
+
+           font-weight: 400;
+           font-size: 16px;
+           letter-spacing: 0.03em;
+           color: #596059;
+           border-radius: 15px;
+           padding: 1rem;
+           box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+
+           &:focus-visible {
+             outline: 1px solid $color;
+             border-radius: 8px;
+           }
+         }
+
+         .comment_body_footer {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+
+           .btn_box_comment {
+             .btn:hover {
+               border: 1px solid $color;
+             }
+           }
+
+           .comment_date {
+             font-weight: 500;
+             font-size: 16px;
+             letter-spacing: 0.03em;
+             text-align: center;
+             color: #596059;
+           }
+         }
+
+         .btn {
+           background: $white;
+
+           &:hover {
+             background-color: $color;
+           }
+         }
+       }
+
+     }
+   }
  }
 
 
@@ -277,6 +399,18 @@
    padding: 1rem;
    position: relative;
    min-height: 200px;
+
+   .btn_add_object {
+     i {
+       font-size: 2rem;
+     }
+   }
+
+   .icon_obj {
+     font-size: 3rem;
+     margin-right: 1rem;
+     color: #e6ece5;
+   }
 
    .object_box_filter-item-footer {
      position: absolute;
@@ -352,14 +486,16 @@
          background-color: #00000000;
          border: 2px solid #ffffff00;
 
+         i {
+           color: #e6ece5;
+           font-size: 1.5rem;
+         }
 
          &:hover {
-           border: 2px solid #ff1b00;
-           border-radius: 6px;
-           transition: $transition;
-
-           img {
-             filter: invert(77%) sepia(10%) saturate(6901%) hue-rotate(40deg) brightness(134%) contrast(105%);
+           i {
+             transition: $transition;
+             color: rgba(255, 91, 85, 0.44);
+             font-size: 1.8rem;
            }
          }
        }
@@ -372,10 +508,24 @@
          display: flex;
          margin-bottom: 6px;
          align-items: center;
+         gap: .4rem;
+
+         i {
+           color: #e1f283;
+           font-size: 1.3rem;
+         }
        }
 
        .location {
          margin-bottom: 2rem;
+       }
+
+       .progress {
+         --bs-progress-bar-bg: linear-gradient(90deg, #defac6 3.83%, #def9c1 42.94%, #d9e785 75.84%, #2b7 100%);
+       }
+
+       .progress-bar {
+         background: linear-gradient(90deg, #defac6 3.83%, #def9c1 42.94%, #d9e785 75.84%, #2b7 100%);
        }
      }
 
@@ -387,6 +537,11 @@
        .number_people {
          display: flex;
          position: relative;
+
+         i {
+           font-size: 3rem;
+           color: #E6ECE5;
+         }
 
          p {
            font-weight: 600;
