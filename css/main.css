@@ -14130,7 +14130,7 @@ body {
   bottom: 0;
   z-index: 4;
   width: 96%;
-  margin: 4% 2%;
+  margin: 1.5% 2%;
   border-radius: 21px;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
@@ -14159,6 +14159,16 @@ body {
   width: 2rem;
   height: 2rem;
 }
+.footer_mob .footer_mob_box .footer_mob_box_a {
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: #2b7;
+  height: 2rem;
+}
+.footer_mob .footer_mob_box .footer_mob_box_a img {
+  width: 2rem;
+  height: 2rem;
+}
 .footer_mob .footer_mob_box .mobile_menu_content ul {
   padding: 0;
 }
@@ -14170,4 +14180,240 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.hidden {
+  display: inline-block !important;
+  transition: ease-in-out all 0.3s;
+}
+
+.user_lk_info {
+  background-color: #fff;
+  border-radius: 21px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.user_lk_info .img_box_user_info {
+  display: grid;
+  place-items: center;
+}
+.user_lk_info .img_box_user_info .box_img {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+.user_lk_info .img_box_user_info .box_img:hover .btnAddImg {
+  opacity: 1;
+  transition: ease-in-out all 0.3s;
+}
+.user_lk_info .img_box_user_info .box_img .btnAddImg {
+  transition: ease-in-out all 0.3s;
+  opacity: 0;
+  position: absolute;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: #fff;
+  background: linear-gradient(151deg, rgba(34, 187, 119, 0.56) 0%, rgba(165, 219, 131, 0.56) 100%);
+}
+.user_lk_info .img_box_user_info .box_img img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.user_lk_info .img_box_user_info .status_user {
+  text-align: center;
+}
+.user_lk_info .img_box_user_info .status_user .setting_mob {
+  display: none;
+}
+@media (max-width: 480px) {
+  .user_lk_info .img_box_user_info .status_user .setting_mob {
+    display: inline-block;
+    text-decoration: none;
+    color: #2b7;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .user_lk_info .form_lk {
+    transition: ease-in-out all 0.3s;
+    width: 100%;
+    display: none;
+  }
+}
+.user_lk_info .form_lk .form-control {
+  border-radius: 21px;
+}
+.user_lk_info .form_lk .togglePassword {
+  border-left: none;
+  border-radius: 0 21px 21px 0;
+  background-color: #E6ECE5;
+  cursor: pointer;
+  color: #2b7;
+}
+.user_lk_info .phone_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.user_lk_info .phone_box p {
+  margin-bottom: 0;
+}
+.user_lk_info .phone_box .icon {
+  font-size: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  transition: ease-in-out all 0.3s;
+}
+.user_lk_info .phone_box .icon .download_link {
+  color: #CDD1D5;
+  text-decoration: none;
+}
+.user_lk_info .phone_box .icon i:hover {
+  transition: ease-in-out all 0.3s;
+  color: #2b7;
+}
+
+@media (max-width: 480px) {
+  .content_info_user_lk .row {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+}
+@media (max-width: 480px) {
+  .content_info_user_lk .row .rox_box {
+    width: 80%;
+  }
+}
+.content_info_user_lk .big_box,
+.content_info_user_lk .midl_box {
+  background-color: #fff;
+  border-radius: 21px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: grid;
+  align-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: ease-in-out all 0.3s;
+}
+.content_info_user_lk .big_box:hover,
+.content_info_user_lk .midl_box:hover {
+  background: radial-gradient(380.12% 261.29% at 93.99% 88.14%, rgb(34, 187, 119) 0%, rgb(110, 205, 125) 23.7201243639%, rgb(179, 222, 130) 60.646623373%, rgb(217, 231, 133) 100%);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  transition: ease-in-out all 0.3s;
+  color: #fff;
+  cursor: pointer;
+}
+.content_info_user_lk .big_box:hover h4, .content_info_user_lk .big_box:hover .h4,
+.content_info_user_lk .midl_box:hover h4,
+.content_info_user_lk .midl_box:hover .h4 {
+  color: #fff;
+}
+.content_info_user_lk .big_box {
+  height: 250px;
+}
+@media (max-width: 480px) {
+  .content_info_user_lk .big_box {
+    height: 120px;
+  }
+}
+.content_info_user_lk .midl_box {
+  height: 155px;
+}
+@media (max-width: 480px) {
+  .content_info_user_lk .midl_box {
+    height: 120px;
+  }
+}
+.content_info_user_lk .telegram_box {
+  height: 155px;
+  padding: 1rem;
+  border-radius: 21px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  background: radial-gradient(567.4% 222.84% at 84.78% 100%, #2b7 0%, #33bf78 37.42%, #d3e685 100%);
+  text-decoration: none;
+  color: #fff;
+}
+@media (max-width: 480px) {
+  .content_info_user_lk .telegram_box {
+    height: 120px;
+    overflow: hidden;
+  }
+}
+.content_info_user_lk .telegram_box h4, .content_info_user_lk .telegram_box .h4 {
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+.content_info_user_lk .telegram_box i {
+  font-size: 5rem;
+}
+@media (max-width: 480px) {
+  .content_info_user_lk .telegram_box i {
+    font-size: 3rem;
+  }
+}
+.content_info_user_lk .big_box_header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.content_info_user_lk .big_box_header h4, .content_info_user_lk .big_box_header .h4 {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #596059;
+}
+.content_info_user_lk .big_box_header i {
+  font-size: 3.5rem;
+  color: rgb(230, 236, 229);
+}
+.content_info_user_lk .big_box_footer p {
+  max-width: 70%;
+  margin-bottom: 0;
+}
+.content_info_user_lk .big_box_footer .number_info {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.content_info_user_lk .big_box_footer .number_info .info {
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 0.02em;
+  color: #fff;
+  padding: 0.5rem;
+  margin-bottom: 0;
+  background: linear-gradient(359deg, #daea8f 5.38%, #2b7 42.62%, #2b7 78.74%, #daea8f 100%);
+  border-radius: 100% 0 0 0;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+.content_info_user_lk .chart_box {
+  margin-top: 1rem;
+  background: #fff;
+  border-radius: 21px;
+  padding: 1rem;
+}
+.content_info_user_lk .chart_box canvas {
+  max-height: 340px;
 }/*# sourceMappingURL=main.css.map */

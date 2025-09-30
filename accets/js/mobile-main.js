@@ -1,3 +1,21 @@
+function setting_mob(btnLK, formLK) {
+  const btns = document.querySelectorAll(btnLK);
+  const forms = document.querySelectorAll(formLK);
+
+  btns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      if (forms[index]) { // проверка на всякий случай
+        forms[index].classList.toggle('hidden');
+      }
+    });
+  });
+}
+
+// вызов
+setting_mob('.setting_mob', '.form_lk');
+
+
+
 const filters = {
     status: [],
     object: [],
