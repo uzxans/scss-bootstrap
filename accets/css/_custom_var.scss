@@ -1,8 +1,37 @@
+:root {
+  --border-radius: 21px;
+  --color-link: #596059;
+  --transition: ease-in-out all .3s;
+  --color: #2b7;
+  --bg-color: linear-gradient(173deg, #dae786 0%, var(--color) 100%);
+  --white: #fff;
+  --bg-white: #ffffff;
+  --text-color: #596059;
+  --body-bg: #E6ECE5;
+}
+
+/* Тёмная тема */
+body.dark-theme {
+  --color-link: #ccc;
+  --color: #22BB77;
+  --bg-color: linear-gradient(173deg, #333 0%, var(--color) 100%);
+  --white: #fff;
+  --bg-white: #596059;
+  --text-color: #fff;
+  --body-bg: #343a40;
+}
+
+
+
 $borderRadius: 21px;
-$color_link: #596059;
+$color_link: var(--color-link);
 $transition: ease-in-out all .3s;
-$color: #2b7;
-$bgColor: linear-gradient(173deg, #dae786 0%, $color 100%);
+$color: var(--color);
+$bgColor: var(--bg-color);
+//$white: var(--white);
+$bgwhite: var(--bg-white);
+$text-color: var(--text-color);
+$bodyBg: var(--body-bg);
 
 
 

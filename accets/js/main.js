@@ -8,6 +8,50 @@
 //   endDate.min = this.value;
 // });
 
+
+
+
+//darkMode
+document.addEventListener("DOMContentLoaded", function () {
+  const themeToggleBtn = document.getElementById("themeToggleBtn");
+  const themeIcon = document.getElementById("themeIcon");
+  const body = document.body;
+
+  // Загружаем сохранённую тему
+  const savedTheme = localStorage.getItem("theme") || "light";
+  body.classList.add(savedTheme + "-theme");
+
+  // Устанавливаем иконку в зависимости от темы
+  function updateIcon(theme) {
+    if (theme === "dark") {
+      themeIcon.classList.remove("sun-icon");
+      themeIcon.classList.add("moon-icon");
+    } else {
+      themeIcon.classList.remove("moon-icon");
+      themeIcon.classList.add("sun-icon");
+    }
+  }
+  updateIcon(savedTheme);
+
+  // Переключение темы по клику
+  themeToggleBtn.addEventListener("click", () => {
+    let newTheme;
+    if (body.classList.contains("light-theme")) {
+      body.classList.replace("light-theme", "dark-theme");
+      newTheme = "dark";
+    } else {
+      body.classList.replace("dark-theme", "light-theme");
+      newTheme = "light";
+    }
+    localStorage.setItem("theme", newTheme);
+    updateIcon(newTheme);
+  });
+});
+
+
+
+
+
 ///password
 feather.replace({ 'aria-hidden': 'true' });
 
@@ -145,3 +189,5 @@ console.log('Sticky support:', testEl.style.position === 'sticky');
 // Проверка высоты контейнеров
 console.log('Column height:', document.querySelector('.board .column').offsetHeight);
 console.log('Board height:', document.querySelector('.board').offsetHeight);
+
+
