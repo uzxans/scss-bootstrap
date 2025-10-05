@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYSTEM - Вход</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      position: relative;
+      background: #f3f8f4;
+    }
+
+    /* === АНИМАЦИОННЫЙ ФОН === */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+      padding: 1rem;
+    }
+
+    .login-card {
+      background: #22BB77;
+      background: linear-gradient(90deg, rgba(34, 187, 119, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(83, 237, 114, 1) 100%);
+      border-radius: 3rem;
+      padding: 2rem 4rem;
+      box-shadow: 0 20px 60px rgba(76, 175, 80, 0.3);
+      max-width: 480px;
+
+      border: 15px solid #47C46D;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .logo img {
+      max-width: 100%;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    input {
+      width: 85%;
+      padding: 15px 45px 15px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 15px;
+
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    .input-icon {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      fill: #ccc;
+      cursor: pointer;
+      transition: fill 0.3s ease;
+    }
+
+    .input-icon:hover {
+      fill: #4CAF50;
+    }
+
+    .forgot-password {
+      text-align: right;
+      margin-top: 8px;
+    }
+
+    .forgot-password a {
+      color: white;
+      font-size: 13px;
+      text-decoration: underline;
+      opacity: 0.9;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 15px;
+      background: white;
+      color: #4CAF50;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 30px 0 25px;
+      color: white;
+      font-size: 14px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .social-login {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-btn {
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    @media (max-width: 500px) {
+      body {
+        overflow: hidden;
+      }
+
+      input {
+        width: 77% !important;
+      }
+
+      .login-card {
+        padding: 1rem;
+        /* min-width: 200px; */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- === ФОН === -->
+  <div class="background">
+    <svg viewBox="0 0 1920 837" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <g filter="url(#filter0_d_3049_3036)">
+        <path d="M1921.5 1C1831.33 175.833 1518.4 526.9 1004 488.5C489.6 450.1 48.3333 768.5 -108 932.5" stroke="white"
+          stroke-width="2">
+          <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+                M1921.5 1C1831.33 175.833 1518.4 526.9 1004 488.5C489.6 450.1 48.3333 768.5 -108 932.5;
+                M1921.5 1C1831.33 120 1518.4 560 1004 510C489.6 470 48.3333 740 -108 910;
+                M1921.5 1C1831.33 175.833 1518.4 526.9 1004 488.5C489.6 450.1 48.3333 768.5 -108 932.5" />
+        </path>
+
+        <path d="M1921.5 50C1600 250 1200 400 800 420C400 440 0 700 -108 850" stroke="limegreen" stroke-width="1.5"
+          opacity="0.6">
+          <animate attributeName="d" dur="6s" repeatCount="indefinite" values="
+                    M1921.5 50C1600 250 1200 400 800 420C400 440 0 700 -108 850;
+                    M1921.5 30C1600 200 1200 380 800 400C400 420 0 680 -108 830;
+                    M1921.5 50C1600 250 1200 400 800 420C400 440 0 700 -108 850" />
+        </path>
+        <!-- Бирюзовая линия -->
+        <path d="M1921.5 150C1700 300 1400 500 900 520C400 540 100 750 -108 900" stroke="white" stroke-width="2"
+          opacity="0.">
+          <animate attributeName="d" dur="12s" repeatCount="indefinite" values="
+            M1921.5 150C1700 300 1400 500 900 520C400 540 100 750 -108 900;
+            M1921.5 180C1700 320 1400 520 900 540C400 560 100 770 -108 920;
+            M1921.5 150C1700 300 1400 500 900 520C400 540 100 750 -108 900" />
+        </path>
+      </g>
+      <defs>
+        <filter id="filter0_d_3049_3036" x="-118.359" y="0.770874" width="2038.3" height="940.074"
+          filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha" />
+          <feOffset dy="4" />
+          <feGaussianBlur stdDeviation="2" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix type="matrix" values="0 0 0 0 0.133333 0 0 0 0 0.733333 0 0 0 0 0.466667 0 0 0 0.63 0" />
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3049_3036" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3049_3036" result="shape" />
+        </filter>
+      </defs>
+    </svg>
+  </div>
+
+
+
+  <div class="container">
+    <div class="login-card">
+      <div class="logo">
+        <img src="./accets/img/logo/logo-login.png" alt="">
+      </div>
+
+      <form id="loginForm">
+        <div class="input-group">
+          <div class="input-wrapper">
+            <input type="text" placeholder="Введите ваш E-mail адрес или логин:" required>
+            <svg class="input-icon" viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="input-wrapper">
+            <input type="password" id="passwordInput" placeholder="Пароль" required>
+            <svg class="input-icon" id="togglePassword" viewBox="0 0 24 24">
+              <path
+                d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+            </svg>
+          </div>
+          <div class="forgot-password">
+            <a href="#">Забыли пароль?</a>
+          </div>
+        </div>
+
+        <button type="submit" class="login-btn">Войти</button>
+      </form>
+
+      <div class="divider">ВОЙТИ С ПОМОЩЬЮ</div>
+
+      <div class="social-login">
+        <div class="social-btn">
+          <svg class="social-icon" viewBox="0 0 24 24" style="fill: #0077B5;">
+            <path
+              d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+          </svg>
+        </div>
+        <div class="social-btn">
+          <svg class="social-icon" viewBox="0 0 24 24" style="fill: #000;">
+            <path
+              d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
+          </svg>
+        </div>
+        <div class="social-btn">
+          <svg class="social-icon" viewBox="0 0 24 24" style="fill: #DB4437;">
+            <path
+              d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Показ/скрытие пароля
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('passwordInput');
+
+    togglePassword.addEventListener('click', function () {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+
+      // Меняем иконку
+      if (type === 'text') {
+        // Открытый замок
+        this.innerHTML = '<path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h2c0-1.66 1.34-3 3-3s3 1.34 3 3v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>';
+      } else {
+        // Закрытый замок
+        this.innerHTML = '<path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>';
+      }
+    });
+
+    // Отправка формы
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Форма входа отправлена!');
+    });
+  </script>
+</body>
+
+</html>

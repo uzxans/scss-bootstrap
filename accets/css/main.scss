@@ -549,7 +549,7 @@ body {
     display: flex;
     gap: 1rem;
     align-items: center;
-    background: #e6ece538;
+    background: $bodyBg;
     backdrop-filter: blur(5px);
     width: 100%;
     z-index: 4;
@@ -567,6 +567,11 @@ body {
       padding: 0rem 0.2rem;
     }
 
+    @include _425 {
+      display: flex;
+      gap: .2rem;
+    }
+
     h1 {
       margin-bottom: 0;
 
@@ -578,10 +583,16 @@ body {
     .text {
       font-style: italic;
       font-weight: 400;
-      font-size: 18px;
+      font-size: 1rem;
       letter-spacing: 0.03em;
       text-align: center;
-      color: #596059;
+      color: $text-color;
+
+      @include _425 {
+        text-wrap: nowrap;
+        overflow-x: hidden;
+        font-size: 1rem;
+      }
     }
   }
 
@@ -636,6 +647,7 @@ body {
 
   @include _480 {
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    background: white;
     display: flex;
     align-items: center;
     position: sticky;
@@ -709,7 +721,7 @@ body {
           margin-bottom: 0.8rem;
 
           a {
-            color: #596059;
+            color: $text-color;
             display: flex;
             align-items: center;
             gap: 8px;

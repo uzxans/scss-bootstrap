@@ -5,7 +5,7 @@
   align-items: center;
   gap: 1rem;
   padding: 2rem;
-  background-color: $white;
+  background-color: $bgwhite;
   border-radius: 34px;
 
   @include _525 {
@@ -45,6 +45,7 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     cursor: pointer;
+    background: #ffff;
 
     .tags {
       display: flex;
@@ -258,10 +259,7 @@
         display: grid;
         justify-content: center;
         align-content: center;
-        //border: 1px solid $color;
-        //box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-        box-shadow: #22bb772b 6px 2px 16px 0px,
-          rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+        box-shadow: $btnShadow;
 
         span {
           display: none;
@@ -540,13 +538,13 @@
       display: flex;
       gap: 1rem;
       letter-spacing: 0.05em;
-      color: #596059;
+      color: $text-color;
       transition: $transition;
 
       &:hover {
         transition: $transition;
         border: 1px dashed rgba(197, 203, 196, 0.55);
-        background: rgb(246 246 246);
+        background: $bgwhite;
       }
     }
 
@@ -975,4 +973,17 @@
       }
     }
   }
+}
+
+
+.btn-white {
+  background-color: white;
+
+  &:checked {
+    background-color: #22bb77 !important;
+  }
+}
+
+.btn-check:checked {
+  background-color: #22bb77;
 }

@@ -9,7 +9,11 @@
    .item_obj {
      padding: 2.1rem;
      border-radius: $borderRadius;
-     background-color: $white;
+     background-color: $bgwhite;
+
+     @include _768 {
+       padding: 1rem;
+     }
    }
 
    .obj_cart {
@@ -132,6 +136,12 @@
          //  font-style: italic;
          font-weight: 600;
          font-size: 21px;
+         box-shadow: -1px 1px 3px 0 rgba(0, 0, 0, 0.25);
+
+
+         @include _768 {
+           font-size: 1rem;
+         }
 
          span {
            color: $color_link;
@@ -141,6 +151,10 @@
            background: $white;
            font-weight: 600;
            font-size: 18px;
+
+           @include _768 {
+             font-size: .8rem;
+           }
          }
        }
 
@@ -394,7 +408,7 @@
  .object_box_filter-item {
    flex: 1 0 32.333%;
    min-width: 250px;
-   background-color: $white;
+   background-color: $bgwhite;
    border-radius: $borderRadius;
    padding: 1rem;
    position: relative;
@@ -468,7 +482,7 @@
      width: 100%;
      padding: 1rem;
      border-radius: $borderRadius;
-     background-color: $white;
+     background-color: $bgwhite;
 
      &:hover {
        cursor: pointer;

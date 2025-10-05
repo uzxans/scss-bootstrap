@@ -80,9 +80,9 @@
           <i class="exit-icon"></i>
           <span class="alertcrm">Выход из системы</span>
         </button>
-        <button class="icon_btn">
+        <button id="themeToggleBtn" class="icon_btn">
           <span class="alertcrm">Переключить тему</span>
-          <i class="sun-icon"></i>
+          <i id="themeIcon" class="sun-icon"></i>
         </button>
       </div>
 
@@ -271,7 +271,7 @@
             </div>
             <!--End-Mobile Filter-->
 
-            <button class="btn_srm"><span>Мои заявки</span>
+            <button class="btn_srm mr-2"><span>Мои заявки</span>
               <img src="./accets/fonts/icon/my-tiket-mob.svg" alt="">
             </button>
             <button class="btn_srm"><span>Экспорт в Excel</span> <img src="./accets/fonts/icon/export-exel.svg" alt="">
@@ -279,10 +279,10 @@
           </div>
           <div class="mb-2 btn-check-box">
             <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" checked>
-            <label class="btn" for="option5"><img src="./accets/fonts/icon/kanban.svg" alt=""></label>
+            <label class="btn btn-white" for="option5"><img src="./accets/fonts/icon/kanban.svg" alt=""></label>
 
             <input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off">
-            <label class="btn" for="option6"><img src="./accets/fonts/icon/mob-filter.svg" alt=""></label>
+            <label class="btn btn-white" for="option6"><img src="./accets/fonts/icon/mob-filter.svg" alt=""></label>
           </div>
         </div>
 
@@ -1205,10 +1205,8 @@
 
       document.head.appendChild(script);
     }
-
     // Загружаем при старте
     loadAppropriateScript();
-
     // Обновляем при изменении размера окна (опционально)
     window.addEventListener('resize', function () {
       loadAppropriateScript();

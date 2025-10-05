@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> -->
+
+  <!-- Подключаем flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./accets/fonts/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="header_mob container py-2">
+    <img src="./accets/img/logo/logo_mob.svg" alt="" class="logo_img_mob">
+    <a href="/"><img src="./accets/icon/user_mob_prof.svg" alt=""></a>
+  </div>
+
+  <div class="item_container">
+
+    <div class="sidebar">
+      <div class="logo_box">
+        <img src="./accets/img/logo/logo.svg" alt="" class="logo_img">
+        <img src="./accets/img/logo/logo_mob.svg" alt="" class="logo_img_mob">
+      </div>
+      <!-- <button class="btn_menu"><img src="./accets/img/btn_menu.svg" alt=""></button> -->
+      <button class="btn_menu">
+        <div class="icon-container">
+          <!-- Исходный SVG с точками -->
+          <svg class="dots-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 10 16"
+            fill="none">
+            <rect width="4" height="4" rx="2" fill="#22BB77" />
+            <rect x="6" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect y="6" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect x="6" y="6" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect y="12" width="4" height="4" rx="2" fill="#22BB77" />
+            <rect x="6" y="12" width="4" height="4" rx="2" fill="#22BB77" />
+          </svg>
+
+          <!-- SVG со стрелкой (замените на свою стрелку) -->
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+            fill="none">
+            <path d="M15 18L9 12L15 6" stroke="#22BB77" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+      </button>
+
+
+      <!-- <div class="btn_menu_Mob btn btn-primary">
+        <i class="bi bi-list"></i>
+      </div> -->
+      <div class="menu">
+        <ul>
+          <li><a href=""><i class="search-big-icon"></i><span>Поиск</span></a></li>
+          <li><a class="active" href="#"><i class="icon-admin"></i>
+              <span>Администрирование</span></a></li>
+          <li><a href=""><i class="analytics-icon"></i><span>Аналитика</span></a></li>
+          <li><a href="/object.html"><i class="objects-analitic-icon"></i><span>Объекты</span></a></li>
+          <li><a href=""><i class="person4-icon"></i><span>HR</span></a></li>
+          <li><a href=""><i class="icon-big-application-white"></i><span>Мои заявки</span></a></li>
+          <li><a href=""><i class="icon-account"></i><span>Мой аккаунт</span></a></li>
+          <hr>
+          <li><a href=""><i class="video-little-icon"></i><span>Видео встреча</span></a></li>
+          <li><a href=""><i class="icon-knowledge"></i><span>База знаний</span></a></li>
+          <li><a href=""><i class="icon-support"></i><span>Тех. поддержка</span></a></li>
+        </ul>
+      </div>
+      <!-- end menu -->
+
+      <div class="exit_box">
+        <button class="icon_btn">
+          <i class="exit-icon"></i>
+          <span class="alertcrm">Выход из системы</span>
+        </button>
+        <button id="themeToggleBtn" class="icon_btn">
+          <span class="alertcrm">Переключить тему</span>
+          <i id="themeIcon" class="sun-icon"></i>
+        </button>
+      </div>
+
+      <button class="btn btn-primary menu_btn_close_mob"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <!-- end sidebar -->
+
+    <div class="main">
+
+      <div class="header_info">
+        <h1>Поиск и нейросеть</h1>
+      </div>
+      <!-- End header_info -->
+      <div class="container_crm">
+        <p>Какой вопрос у вас ?</p>
+        <form action="">
+          <div class="form-floating mb-3">
+            <textarea class="form-control bg-light-subtle" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 100px"></textarea>
+          </div>
+          <button class="btn btn-send">Отправить</button>
+        </form>
+      </div>
+      <!-- end container_crm -->
+    </div>
+    <!-- end main -->
+  </div>
+
+
+
+
+  <div class="footer_mob">
+    <ul class="footer_mob_box">
+      <li><a href=""><i class="icon-big-application-white"></i></a></li>
+      <li><a href=""><i class="analytics-icon"></i></a></li>
+      <li><a href=""><i class="objects-analitic-icon"></i></a></li>
+      <li><a href=""><i class="person2-icon"></i></a></li>
+      <li><a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightMenuMobile"
+          aria-controls="offcanvasRightMenuMobile"><i class="list-large-icon"></i></a></li>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightMenuMobile"
+        aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">
+            <img src="./accets/img/logo/logo.svg" alt="" class="logo_img">
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="mobile_menu_content">
+            <ul>
+              <li><a class="active" href="#"><i class="icon-admin"></i><span>Администрирование</span></a></li>
+              <li><a href=""><i class="search-big-icon"></i><span>Поиск</span></a></li>
+              <li><a href=""><i class="analytics-icon"></i><span>Аналитика</span></a></li>
+              <li><a href="/object.html"><i class="objects-analitic-icon"></i><span>Объекты</span></a></li>
+              <li><a href=""><i class="person2-icon"></i><span>HR</span></a></li>
+              <li><a href=""><i class="icon-big-application"></i><span>Мои заявки</span></a></li>
+              <li><a href=""><i class="icon-account"></i><span>Мой аккаунт</span></a></li>
+              <hr>
+              <li><a href=""><i class="video-little-icon"></i><span>Видео встреча</span></a></li>
+              <li><a href=""><i class="icon-knowledge"></i><span>База знаний</span></a></li>
+              <li><a href=""><i class="icon-support"></i><span>Тех. поддержка</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </ul>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+  <script src="/accets/js/main.js"></script>
+</body>

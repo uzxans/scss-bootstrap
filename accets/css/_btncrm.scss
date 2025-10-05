@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1rem;
   letter-spacing: 0.03em;
   text-align: center;
   color: #fff;
@@ -11,6 +11,7 @@
   border: 3px solid $body-bg;
   padding: 0.2rem 1rem;
   transition: ease-in-out all .3s;
+  margin-right: 5px;
 
   &:hover {
     transition: ease-in-out all .3s;
@@ -23,7 +24,7 @@
 
   i {
     transform: rotate(0.5turn);
-    margin: 0 .5rem;
+    margin: 0 .1rem;
   }
 }
 

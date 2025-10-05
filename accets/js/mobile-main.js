@@ -15,7 +15,6 @@ function setting_mob(btnLK, formLK) {
 setting_mob('.setting_mob', '.form_lk');
 
 
-
 const filters = {
     status: [],
     object: [],
@@ -27,6 +26,7 @@ const filters = {
 
   const tagContainer = document.getElementById("activeTags");
   const cards = document.querySelectorAll(".list_user_item");
+
 
   /** ========== ФУНКЦИЯ ФИЛЬТРАЦИИ ========== */
   function applyFilters() {

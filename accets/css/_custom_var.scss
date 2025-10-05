@@ -8,6 +8,8 @@
   --bg-white: #ffffff;
   --text-color: #596059;
   --body-bg: #E6ECE5;
+  --box-shadow-btn: #22bb772b 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 
 /* Тёмная тема */
@@ -19,6 +21,9 @@ body.dark-theme {
   --bg-white: #596059;
   --text-color: #fff;
   --body-bg: #343a40;
+  --color-link: #2b7;
+  --box-shadow-btn: #343a40 6px 2px 16px 0px,
+    #343a40 -6px -2px 16px 0px;
 }
 
 
@@ -32,6 +37,7 @@ $bgColor: var(--bg-color);
 $bgwhite: var(--bg-white);
 $text-color: var(--text-color);
 $bodyBg: var(--body-bg);
+$btnShadow: var(--box-shadow-btn);
 
 
 
